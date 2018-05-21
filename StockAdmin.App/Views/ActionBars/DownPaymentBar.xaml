@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="SigiFluent.Views.ActionBars.DownPaymentBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+            d:DesignHeight="100" d:DesignWidth="900">
+    <StackPanel Orientation="Horizontal" x:Name="PurchasesBarPanel" >
+        <telerik:RadRibbonGroup>
+            <telerik:RadRibbonButton MinWidth="75" LargeImage="/SigiFluent;component/Resources/light/appbar.deposit.png" 
+										 Size="Large" Text="Nuevo Anticipo" Command="{Binding NewCommand}"
+                                     Style="{StaticResource RibbonButton}"
+                                     />
+        </telerik:RadRibbonGroup>
+        <telerik:RadRibbonGroup Header="Filtrar Anticipo">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <telerik:RadComboBox x:Name="ddSeries" Margin="2"  Grid.Row="0" Grid.Column="0" IsEditable="False" MinWidth="200" EmptyText="Seleccione Serie"
+												ItemsSource="{Binding Series, IsAsync=True, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedSerie}" DisplayMemberPath="SeriesTitle" />
+
+
+
+
+
+
+                <telerik:RadComboBox x:Name="ddlEstados" Margin="2" Grid.Row="1" Grid.Column="0" IsEditable="False" 
+								   EmptyText="Seleccione Estado" ItemsSource="{Binding Statuses}" SelectedItem="{Binding FilterStatus,Mode=TwoWay}"/>
+
+
+                <telerik:RadDatePicker Width="150" Margin="2" Grid.Row="0" Grid.Column="1" 
+											DateTimeWatermarkContent="Fecha desde" 
+											SelectedDate="{Binding StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <telerik:RadDatePicker Width="150" Margin="2" Grid.Row="0" Grid.Column="2" 
+											DateTimeWatermarkContent="Fecha hasta" 
+											SelectedDate="{Binding LastDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBox x:Name="tbSearch" Text="{Binding TextFilter, UpdateSourceTrigger=PropertyChanged}"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="2" RenderTransformOrigin="0.5,0.5">
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.105"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+                <telerik:RadRibbonButton LargeImage="/SigiFluent;component/Resources/light/appbar.clear.inverse.reflect.horizontal.png" Style="{StaticResource RibbonButton}"
+										 Size="Large" Text="Limpiar Filtro" Command="{Binding CleanFilterCommand}" Grid.Column="3" Grid.Row="0"
+                                         Grid.RowSpan="2">
+
+                </telerik:RadRibbonButton>
+            </Grid>
+
+
+        </telerik:RadRibbonGroup>
+        <telerik:RadRibbonGroup Header="Anticipo Seleccionado">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <telerik:RadRibbonButton 
+                                           Style="{StaticResource RibbonButton}"
+											Grid.RowSpan="2" Grid.Column="0" Grid.Row="0"
+											Size="Large" Text="Procesar Anticipo" 
+											LargeImage="/SigiFluent;component/Resources/light/appbar.lightning.png"
+											Command="{Binding DoProcessCommannd}"/>
+
+                <telerik:RadRibbonButton   Style="{StaticResource RibbonButton}"  SplitText="False" 
+											Grid.Column="1" Grid.Row="0" Text="Eliminar" 
+											Size="Medium" SmallImage="/SigiFluent;component/Resources/light/appbar.delete.png"
+											Command="{Binding DeleteCommand}"/>
+
+                <telerik:RadRibbonButton    SplitText="False"  Style="{StaticResource RibbonButton}"
+											Grid.Column="1" Grid.Row="1"
+											Size="Medium" Text="Modificar" SmallImage="/SigiFluent;component/Resources/light/appbar.edit.png"
+											Command="{Binding EditCommand}"/>
+
+                <!--<telerik:RadRibbonButton   Style="{StaticResource RibbonButton}" 
+											Grid.Column="3" Grid.Row="0" Grid.RowSpan="2" Text="Nota de Crédito" 
+											Size="Large" LargeImage="/SigiFluent;component/Resources/light/appbar.paper.png"
+											Command="{Binding NewCreditNoteCommand}"/>-->
+
+            </Grid>
+
+
+        </telerik:RadRibbonGroup>
+
+
+
+    </StackPanel >
+</UserControl>

@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="SigiFluent.Views.UserControls.SupplierPartnerChooser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:commands="clr-namespace:SigiFluent.Commands"
+             mc:Ignorable="d" 
+             Background="White"
+            >
+    <Border Padding="10" Focusable="False">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <TextBox x:Name="SearchTextBox" Style="{DynamicResource SearchBox}" 
+                         commands:FocusExtension.IsFocused="{Binding IsFocusedSearchBox,Mode=TwoWay}"
+                         Text="{Binding SearchKeyword }" Width="400"  >
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="KeyUp">
+                            <commands:InvokeDataCommand Command="{Binding SearchCommand}" CommandParameter="{Binding ElementName=SearchTextBox}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Escape" Command="{Binding  Path=CloseModalViewCommand}" />
+                        <KeyBinding Key="Enter" Command="{Binding  Path=SearchCommand}" />
+                        <KeyBinding Key="Down" Command="{Binding Path=SetFocusToGrid}" />
+                    </TextBox.InputBindings>
+                </TextBox>
+                <Button Command="{Binding SearchCommand}" Content="Buscar" Style="{DynamicResource GrayButton}"/>
+            </StackPanel>
+
+            <Border Margin="0,10" Grid.Row="1" >
+                <telerik:RadGridView  IsSynchronizedWithCurrentItem="True"  
+                                      SelectedItem="{Binding SelectedPartner}"
+                                      ItemsSource="{Binding SupplierPartnerCollection, IsAsync=True}"
+                                       AutoGenerateColumns="False" IsBusy="{Binding IsBusy}" 
+                                       IsFilteringAllowed="False" ShowGroupPanel="False"  IsReadOnly="True"
+                                       commands:FocusExtension.IsFocused="{Binding IsFocusedPartnersGrid, Mode=TwoWay}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <commands:InvokeDataCommand Command="{Binding SelectPartnerCommand}" CommandParameter="{Binding ElementName=SearchTextBox}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <telerik:RadGridView.InputBindings>
+                        <KeyBinding Key="Enter" Command="{Binding  Path=SelectPartnerCommand}" />
+                        <KeyBinding Key="Escape" Command="{Binding  Path=CloseModalViewCommand}" />
+                    </telerik:RadGridView.InputBindings>
+                    <telerik:RadGridView.Columns>
+                        <commands:MyColumn Header="#" Width="30" />
+                        <telerik:GridViewDataColumn Header="Código"  DataMemberBinding="{Binding CardCode}"  />
+                        <telerik:GridViewDataColumn Header="NRC"  DataMemberBinding="{Binding AddId}"  />
+                        <telerik:GridViewDataColumn Header="NIT"   DataMemberBinding="{Binding U_NIT}" />
+                        <telerik:GridViewDataColumn Header="Nombre" DataMemberBinding="{Binding CardName}"  />
+                        <telerik:GridViewDataColumn Header="Telefono" DataMemberBinding="{Binding Phone1}" />
+                        <telerik:GridViewDataColumn Header="Direccion"  DataMemberBinding="{Binding Address}"  />
+                        <telerik:GridViewDataColumn Header="Notes"  DataMemberBinding="{Binding Phone1}"  />
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView >
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

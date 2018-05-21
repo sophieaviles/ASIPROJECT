@@ -1,0 +1,646 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic">
+
+
+    <LinearGradientBrush x:Key="GreyBtnBg" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFCDDDEB" Offset="1"/>
+        <GradientStop Color="White" Offset="0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HeaderBg" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#71A2CA" Offset="1"/>
+        <GradientStop Color="#19478A" Offset="0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="HeaderBg2" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#B8DBF1" Offset="1"/>
+        <GradientStop Color="#71A2CA" Offset="0.5"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="MetroBlue" Color="#26A0DA" />
+    <SolidColorBrush x:Key="MetroGray" Color="#333333" />
+    <SolidColorBrush x:Key="MetroGrayFocus" Color="#8F8F8F" />
+    <SolidColorBrush x:Key="MetroLightGray" Color="#CCCCCC" />
+    <SolidColorBrush x:Key="MetroError" Color="#E23907" />
+    <SolidColorBrush x:Key="MetroWordBlue" Color="#1A7099"/>
+
+    <Style TargetType="{x:Type Border}" x:Key="Footer">
+        <Setter Property="Padding" Value="0 10 0 0" />
+        <Setter Property="Margin" Value="0 20 0 0" />
+        <Setter Property="BorderThickness" Value="0 1 0 0" />
+        <Setter Property="BorderBrush" Value="{DynamicResource MetroLightGray}"/>
+    </Style>
+    <Style TargetType="{x:Type Border}" x:Key="ErrorBorder">
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Margin" Value="0 10" />
+        <Setter Property="Background" Value="{DynamicResource MetroError}"/>
+    </Style>
+    <Style
+		x:Key="ButtonFocusVisual">
+        <Setter
+			Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Label}" x:Key="{x:Type Label}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="{x:Type TextBlock}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="FontFamily" Value="Segoe UI" />
+
+
+    </Style>
+
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="Title">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="28" />
+    </Style>
+
+    <Style x:Key="SubTitle" TargetType="{x:Type TextBlock}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontStyle" Value="Normal" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
+    <Style x:Key="RibbonButton" TargetType="{x:Type Button}" >
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="Margin" Value="2" />
+    </Style>
+    
+    <Style x:Key="ActionBartButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border
+							x:Name="Border"
+                                
+							Background="{TemplateBinding Background}"
+							BorderBrush="Transparent"
+							BorderThickness="{TemplateBinding BorderThickness}" />
+
+                        <ContentPresenter
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							Margin="{TemplateBinding Padding}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							RecognizesAccessKey="True" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="OpacityMask" Value="#57888888"/>
+
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Background" Value="#59696969"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="OpacityMask" Value="#57888888"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MinimizeButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="{StaticResource MetroGray}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        
+        <Setter Property="Width" Value="28"/>
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border
+							x:Name="Border"                                
+							Background="{TemplateBinding Background}"
+							BorderThickness="1 0 1 1" BorderBrush="{StaticResource MetroLightGray}" >
+                            <Rectangle x:Name="Rectangle" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Fill="{StaticResource MetroGray}" Height="3" Margin="6"/>
+                        </Border>
+
+                        
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="OpacityMask" Value="#57888888"/>
+
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource MetroLightGray}"/>
+
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="Rectangle" Property="Fill" Value="{StaticResource MetroLightGray}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+    <Style x:Key="CloseAppButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="{StaticResource MetroGray}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        
+        <Setter Property="Width" Value="32"/>
+        <Setter Property="Height" Value="28"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border
+							x:Name="Border"                                
+							Background="{TemplateBinding Background}"
+							BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{StaticResource MetroLightGray}" >
+                            
+                            <Path Data="M2.3943299,0.5 L4.23067,0.5 9.6875,6.2784314 15.14433,0.5 16.98067,0.5 10.984536,7.5000001 16.98067,14.5 15.14433,14.5 9.6875,8.7215693 4.23067,14.5 2.3943299,14.5 8.3904639,7.5000001 z" 
+                              Fill="{StaticResource MetroGray}" Stroke="{StaticResource MetroGray}" 
+                              Margin="6" 
+                                  StrokeThickness="1"
+                              Stretch="Uniform"  HorizontalAlignment="Center"  
+                              x:Name="Rectangle" >
+
+                            </Path>
+                            
+                        </Border>
+
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="OpacityMask" Value="#57888888"/>
+
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource MetroLightGray}"/>
+
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="Rectangle" Property="Fill" Value="{StaticResource MetroLightGray}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+    <Style x:Key="HomeButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource MetroGray}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Padding" Value="10,0" />
+        <Setter Property="Margin" Value="0,0,1.6,0" />
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Height" Value="36"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border
+							x:Name="Border"                                
+							Background="{TemplateBinding Background}"
+							BorderThickness="0" />
+
+                        <ContentPresenter
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"                               
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							Margin="{TemplateBinding Padding}"
+							RecognizesAccessKey="True" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="OpacityMask" Value="#57888888"/>
+
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="Background" Value="DimGray"/>
+
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#81ADADAD"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <!--<Style TargetType="{x:Type ToggleButton}" x:Key="ToggleMenuItem" >
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Height" Value="36"/>
+        <Setter Property="Margin" Value="1.6,0" />
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid>
+                        <Border x:Name="Border" BorderThickness="1.0" BorderBrush="Transparent" Background="White" Margin="0 5 0 0">
+                            <ContentPresenter x:Name="contentPresenter" 
+								Content="{TemplateBinding Content}" 
+								ContentTemplate="{TemplateBinding ContentTemplate}"
+								VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+								HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
+								Margin="10,0"/>
+                        </Border>
+                        <Border x:Name="Line" BorderThickness="0,0,0,1" BorderBrush="{StaticResource MetroLightGray}" Margin="1,0" />
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Foreground" Value="{StaticResource MetroWordBlue}"/>
+                        </Trigger>
+                        
+                       <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Foreground" Value="{StaticResource MetroWordBlue}"/>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource MetroLightGray}" />                            
+                        </Trigger>
+
+                        <Trigger Property="IsChecked"  Value="true">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource MetroLightGray}" />
+                            <Setter Property="Foreground" Value="{StaticResource MetroWordBlue}"/>
+                            <Setter TargetName="Line" Property="BorderBrush" Value="White" />
+                        </Trigger>
+
+                       <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource MetroLightGray}" />
+                            <Setter Property="Foreground" Value="{StaticResource MetroLightGray}"/>
+                        </Trigger>
+
+
+                       
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>-->
+    <Style TargetType="ToggleButton" x:Key="ToggleMenuItem" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border x:Name="Border" BorderBrush="Transparent" BorderThickness="0"  Margin="0 0 0 0">
+                        <ContentPresenter x:Name="contentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  Margin="7,0"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource MetroGray}"/>
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#86BFD0" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource MetroLightGray}"/>
+                            <Setter Property="Foreground" Value="Black" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+                        </Trigger>
+
+
+                        <Trigger Property="IsChecked"  Value="true">
+                            <Setter Property="BorderBrush" TargetName="Border" Value="#E9DFDF" />
+                            <Setter Property="Background" TargetName="Border" Value="{StaticResource MetroBlue}"/>
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+        <Setter Property="Margin" Value="1"/>
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Height" Value="35"/>
+    </Style>
+
+    <Style x:Key="Error_msg" TargetType="{x:Type TextBlock}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="#FF7600"/>
+
+    </Style>
+
+    <Style x:Key="CloseButton" TargetType="{x:Type Button}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+       
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border Background="Transparent" x:Name="Frame" >
+
+                        <Path Data="M2.3943299,0.5 L4.23067,0.5 9.6875,6.2784314 15.14433,0.5 16.98067,0.5 10.984536,7.5000001 16.98067,14.5 15.14433,14.5 9.6875,8.7215693 4.23067,14.5 2.3943299,14.5 8.3904639,7.5000001 z" 
+                              Fill="White" 
+                              Margin="0" 
+                              Stretch="Fill"  HorizontalAlignment="Center"  
+                              x:Name="path" >
+                           
+                        </Path>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Frame" Property="Opacity" Value="1" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--BIG FIELDS-->
+
+
+    <!--BIG FIELDS-->
+
+    <!-- LOGIN -->
+    <Style TargetType="{x:Type Border}" x:Key="LoginHeader" >
+        <Setter Property="Background">
+            <Setter.Value>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF0085B2" Offset="0"/>
+                    <GradientStop Color="#FF2D4660" Offset="1"/>
+                </RadialGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- LOGIN -->
+
+    <Style x:Key="GrayButton" TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="DimGray"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="10 4"/>
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="BorderThickness" Value="2" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border
+							x:Name="Border"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}" />
+
+                        <ContentPresenter
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							Margin="{TemplateBinding Padding}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							RecognizesAccessKey="True" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="OpacityMask" Value="#AA888888"/>
+                            <Setter Property="Margin" Value="2 1" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+
+                            <Setter Property="BorderBrush" Value="Gray"/>
+                            <Setter Property="Background" Value="{StaticResource MetroGray}"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#ADADAD"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="BigLbl" TargetType="{x:Type TextBlock}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="34" />
+        <Setter Property="Foreground" Value="#666666"/>
+        <Setter Property="Margin" Value="0 10 0 0" />
+    </Style>
+
+    <Style x:Key="TextBlockHeader" TargetType="{x:Type TextBlock}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="FontFamily" Value="Segoe UI Semibold" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Margin" Value="0 10 0 0" />
+    </Style>
+
+    <Style x:Key="{x:Type PasswordBox}" TargetType="{x:Type PasswordBox}">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="PasswordChar" Value="●"/>
+        <Setter Property="AllowDrop" Value="true"/>
+
+        <Setter Property="Margin" Value="0 5" />
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Border  x:Name="Border" Padding="5,6" BorderThickness="1" BorderBrush="#CCCCCC" Background="White" >
+                        <ScrollViewer x:Name="PART_ContentHost" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="Gray"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#26A0DA"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SearchBox" TargetType="{x:Type TextBoxBase}">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <!--<Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>-->
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Padding" Value="5 0"/>
+        <!--<Setter Property="Margin" Value="15,0,15,5" />-->
+        <Setter Property="Height" Value="36"/>
+        <Setter Property="AllowDrop" Value="true"/>
+       
+        <Setter Property="ClipToBounds" Value="True"/>
+       
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="Border" BorderThickness="1" BorderBrush="{DynamicResource MetroLightGray}" Background="White">
+                        <Grid Margin="0" OpacityMask="Gray">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="32" />
+                            </Grid.ColumnDefinitions>
+
+                            
+                            <Border Grid.Column="1" Padding="1" Margin="5" OpacityMask="Black" >
+                                <Path x:Name="Lens" Fill="#767676" Stretch="Uniform"
+                                      Data="F1 M 14.8076,31.1139L 20.0677,25.9957C 19.3886,24.8199 19.25,23.4554 19.25,22C 19.25,17.5817 22.5817,14 27,14C 31.4183,14 35,17.5817 35,22C 35,26.4183 31.4183,29.75 27,29.75C 25.6193,29.75 24.3204,29.6502 23.1868,29.0345L 17.8861,34.1924C 17.105,34.9734 15.5887,34.9734 14.8076,34.1924C 14.0266,33.4113 14.0266,31.895 14.8076,31.1139 Z M 27,17C 24.2386,17 22,19.2386 22,22C 22,24.7614 24.2386,27 27,27C 29.7614,27 32,24.7614 32,22C 32,19.2386 29.7614,17 27,17 Z " />
+                               
+                            </Border>
+
+                            <ScrollViewer  Grid.Column="0" x:Name="PART_ContentHost" OpacityMask="Black" VerticalAlignment="Center" />
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsReadOnly" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="Transparent"/>
+                            <Setter TargetName="Lens" Property="Fill" Value="{DynamicResource MetroLightGray}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            
+                            <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource MetroGrayFocus}"/>
+                            <Setter TargetName="Lens" Property="Fill" Value="{DynamicResource MetroGray}" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource MetroBlue}"/>
+                            <Setter TargetName="Lens" Property="Fill" Value="{DynamicResource MetroBlue}" />
+                          
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+
+            <DataTrigger Binding="{Binding HasSearchText}" Value="true">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <Border x:Name="Border" CornerRadius="0" Padding="3" BorderBrush="#FFD5D5D5" BorderThickness="1.5" >
+
+                                <Grid Margin="0" OpacityMask="Gray">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="17" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.Style>
+                                        <Style TargetType="{x:Type Grid}">
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="False">
+                                                    <Setter Property="Opacity" Value="0.8"/>
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Opacity" Value="1"/>
+                                                    <!--<Setter TargetName="PathSearchRound" Property="Fill" Value="#516F83" />-->
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Grid.Style>
+
+                                    <Grid ToolTip="Limpiar busqueda..." Opacity="0.8" Style="{DynamicResource ClearStyle}" Grid.Column="1" Margin="0,3,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                        <Rectangle Fill="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                        <Path x:Name="PathSearchRound"
+											Data="M11.75,6.0415 C11.75,9.1019859 9.2316017,11.583 6.125,11.583 C3.0183983,11.583 0.5,9.1019859 0.5,6.0415 C0.5,2.9810141 3.0183983,0.5 6.125,0.5 C9.2316017,0.5 11.75,2.9810141 11.75,6.0415 z"                                                               
+											HorizontalAlignment="Left" Height="12.083" VerticalAlignment="Top" Width="12.25"
+											Stretch="Fill" Stroke="{TemplateBinding Property=Foreground}"/>
+                                        <Path x:Name="PathSearchX"
+											Data="M0.15104635,6.1765003 L2.0573559,6.1765003 L2.8177962,7.6713386 C2.9184937,7.8692617 2.9896765,8.0359335 3.0313447,8.1713543 L3.0521786,8.1713543 C3.1077356,8.0081549 3.1823907,7.8380108 3.276144,7.6609216 L4.0522099,6.1765003 L5.8439326,6.1765003 L4.0834608,8.7599144 L5.8335156,11.51 L3.937623,11.51 L3.1667657,10.072455 C3.1042633,9.9578686 3.0296082,9.7964048 2.9428003,9.5880651 L2.9219663,9.5880651 C2.8698812,9.7339029 2.7986984,9.8901577 2.7084179,10.056829 L1.9323521,11.51 L0.041667968,11.51 L1.8438076,8.8536673 z" 
+											HorizontalAlignment="Left" Height="5.333" Margin="3.209,3.457,0,0" VerticalAlignment="Top" Width="5.802"  
+											Fill="{TemplateBinding Property=Foreground}" Stretch="Fill"/>
+                                    </Grid>
+                                    <ScrollViewer  Grid.Column="0" x:Name="PART_ContentHost" OpacityMask="Black" />
+
+                                </Grid>
+
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+
+        </Style.Triggers>
+    </Style>
+
+
+    <Style TargetType="{x:Type Border}" x:Key="Separador">
+        <Setter Property="BorderThickness" Value="0 1 0 0" />
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="Margin" Value="0 10" />
+
+    </Style>
+
+
+    <!--AUTOCOMPLETE STYLES-->
+    <Style x:Key="AutoCompleteStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="13.333" />
+        <Setter Property="Foreground" Value="#FF0A0A0A" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+   
+
+</ResourceDictionary>

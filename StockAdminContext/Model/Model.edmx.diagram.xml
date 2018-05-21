@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fa1c15d969694b95b2e6b87e04d2133a" Name="Diagram1" ZoomLevel="55" >
+        <EntityTypeShape EntityType="Model.NNM1_Series" Width="1.5" PointX="36.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OITM_Articles" Width="2.25" PointX="22" PointY="29.875" />
+        <EntityTypeShape EntityType="Model.OITW_BranchArticles" Width="2.75" PointX="21.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OWHS_Branch" Width="2.125" PointX="21.375" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WTQ1_TransferRequestDetails" Width="2.25" PointX="25.125" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LocalUsers" Width="2.125" PointX="56.625" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Documents" Width="3" PointX="48.75" PointY="5.875" />
+        <EntityTypeShape EntityType="Model.OWTR_Transfers" Width="2" PointX="11.125" PointY="12" />
+        <EntityTypeShape EntityType="Model.WTR1_TransferDetails" Width="2" PointX="11.25" PointY="23.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.OITM_ArticlesOITW_BranchArticles" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="Model.OWHS_BranchOITW_BranchArticles" />
+        <EntityTypeShape EntityType="Model.UserDocument" Width="2.125" PointX="52.75" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="Model.DocumentsUserDocument" />
+        <AssociationConnector Association="Model.LocalUsersUserDocument" />
+        <EntityTypeShape EntityType="Model.Parameters" Width="1.5" PointX="46.875" PointY="9.875" />
+        <EntityTypeShape EntityType="Model.OPCH_Purchase" Width="1.75" PointX="14.125" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ORPC_SupplierCreditNotes" Width="2.375" PointX="17.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PCH1_PurchaseDetail" Width="2.125" PointX="14.75" PointY="23.75" />
+        <EntityTypeShape EntityType="Model.RPC1_SupplierCreditNoteDetail" Width="2.25" PointX="17.75" PointY="23.5" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_OPCH_FacturasCompraPCH1_DetalleFacturasCompra" />
+        <AssociationConnector Association="Model.FK_ORPC_NotaCreditoProveedoresRPC1_DetalleNotaCreditoProveedores" />
+        <EntityTypeShape EntityType="Model.OIGN_GoodsReceipt" Width="2" PointX="28" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.IGN1_GoodsReceiptDetail" Width="1.5" PointX="28" PointY="23.625" IsExpanded="true" />
+        <AssociationConnector Association="Model.OIGN_GoodsReceiptIGN1_GoodsReceiptDetail" />
+        <EntityTypeShape EntityType="Model.IGE1_GoodsIssueDetail" Width="2" PointX="30.125" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.OIGE_GoodsIssues" Width="1.875" PointX="30.75" PointY="14.125" IsExpanded="true" />
+        <AssociationConnector Association="Model.OIGE_GoodsIssuesIGE1_GoodsIssueDetail" />
+        <EntityTypeShape EntityType="Model.Checkbook" Width="1.75" PointX="30.625" PointY="4.25" />
+        <EntityTypeShape EntityType="Model.SeriesCheckbook" Width="2" PointX="33.25" PointY="5.125" />
+        <AssociationConnector Association="Model.Series" />
+        <AssociationConnector Association="Model.CheckbookSeriesCheckbook" />
+        <EntityTypeShape EntityType="Model.INV1_SalesDetail" Width="1.5" PointX="33.375" PointY="23.375" />
+        <EntityTypeShape EntityType="Model.OINV_Sales" Width="1.5" PointX="33.625" PointY="13.25" />
+        <AssociationConnector Association="Model.OINV_SalesINV1_SalesDetail" />
+        <EntityTypeShape EntityType="Model.PaymentTypes" Width="1.5" PointX="35.5" PointY="26.25" />
+        <AssociationConnector Association="Model.PaymentTypesPaymentTypes" />
+        <AssociationConnector Association="Model.PaymentTypesINV1_SalesDetail" />
+        <AssociationConnector Association="Model.RoyaltiesTypesRel" />
+        <EntityTypeShape EntityType="Model.TransactionLog" Width="1.5" PointX="46.875" PointY="13.875" />
+        <EntityTypeShape EntityType="Model.ORDR_SpecialOrder" Width="2.125" PointX="36.375" PointY="13.5" />
+        <EntityTypeShape EntityType="Model.ATC1_Attachments" Width="1.875" PointX="35.5" PointY="20.875" />
+        <AssociationConnector Association="Model.ORDR_SpecialOrderATC1_Attachments" />
+        <EntityTypeShape EntityType="Model.RDR1_SpecialOrderDetail" Width="2.125" PointX="37.5" PointY="28.125" />
+        <AssociationConnector Association="Model.ORDR_SpecialOrderRDR1_SpecialOrderDetail" />
+        <EntityTypeShape EntityType="Model.RIN1_ClientCreditNoteDetail" Width="2.5" PointX="3.625" PointY="24.25" />
+        <EntityTypeShape EntityType="Model.ORIN_ClientCreditNotes" Width="2.625" PointX="5.125" PointY="12.25" />
+        <AssociationConnector Association="Model.FK_ORPC_NotaCreditoProveedoresRPC1_DetalleNotaCreditoProveedores1" />
+        <EntityTypeShape EntityType="Model.ODPI_DownPayment" Width="1.5" PointX="8.5" PointY="12" />
+        <EntityTypeShape EntityType="Model.DPI1_DownPaymentDetail" Width="2.25" PointX="7.625" PointY="24.25" />
+        <AssociationConnector Association="Model.OINV_SalesINV1_SalesDetail1" />
+        <EntityTypeShape EntityType="Model.Deposits" Width="1.875" PointX="43.25" PointY="19.625" />
+        <EntityTypeShape EntityType="Model.CashMissing" Width="1.875" PointX="46.5" PointY="18.375" />
+        <EntityTypeShape EntityType="Model.OINM_Transaction" Width="2.125" PointX="42.875" PointY="13.625" />
+        <EntityTypeShape EntityType="Model.UserAuthorization" Width="2.125" PointX="52.625" PointY="4.875" />
+        <AssociationConnector Association="Model.UserAuthorizationLocalUsers" />
+        <EntityTypeShape EntityType="Model.ALOHA_Articles" Width="1.5" PointX="34.875" PointY="37.25" />
+        <EntityTypeShape EntityType="Model.OITM_ALOHA" Width="2.625" PointX="30.375" PointY="37" />
+        <AssociationConnector Association="Model.OITM_ALOHAOITM_Articles" />
+        <AssociationConnector Association="Model.ALOHA_ArticlesOITM_ALOHA" />
+        <EntityTypeShape EntityType="Model.AuthorizationLog" Width="2.25" PointX="49.375" PointY="3" />
+        <EntityTypeShape EntityType="Model.OITB_Groups" Width="2" PointX="17.75" PointY="38.875" />
+        <AssociationConnector Association="Model.DocumentsUserAuthorization" />
+        <AssociationConnector Association="Model.OWHS_BranchORIN_ClientCreditNotes" />
+        <AssociationConnector Association="Model.OWHS_BranchODPI_DownPayment" />
+        <AssociationConnector Association="Model.OWHS_BranchOWTR_Transfers" />
+        <AssociationConnector Association="Model.OWHS_BranchOPCH_Purchase" />
+        <AssociationConnector Association="Model.OWHS_BranchORPC_SupplierCreditNotes" />
+        <AssociationConnector Association="Model.OWHS_BranchOIGN_GoodsReceipt" />
+        <AssociationConnector Association="Model.OWHS_BranchOIGE_GoodsIssues" />
+        <AssociationConnector Association="Model.OWHS_BranchOINV_Sales" />
+        <AssociationConnector Association="Model.OWHS_BranchORDR_SpecialOrder" />
+        <AssociationConnector Association="Model.OITB_GroupsOITM_Articles" />
+        <EntityTypeShape EntityType="Model.InvoiceALOHA" Width="1.5" PointX="29.5" PointY="40" />
+        <EntityTypeShape EntityType="Model.DetailInvoiceALOHA" Width="1.5" PointX="32.75" PointY="40.75" />
+        <AssociationConnector Association="Model.DetailInvoiceALOHAALOHA_Articles" />
+        <AssociationConnector Association="Model.InvoiceALOHADetailInvoiceALOHA" />
+        <AssociationConnector Association="Model.OITM_ArticlesRDR1_SpecialOrderDetail" />
+        <AssociationConnector Association="Model.OITM_ArticlesINV1_SalesDetail" />
+        <AssociationConnector Association="Model.OITM_ArticlesIGE1_GoodsIssueDetail" />
+        <AssociationConnector Association="Model.OITM_ArticlesIGN1_GoodsReceiptDetail" />
+        <AssociationConnector Association="Model.OITM_ArticlesWTQ1_TransferRequestDetails" />
+        <AssociationConnector Association="Model.OITM_ArticlesRPC1_SupplierCreditNoteDetail" />
+        <AssociationConnector Association="Model.OITM_ArticlesPCH1_PurchaseDetail" />
+        <AssociationConnector Association="Model.OITM_ArticlesWTR1_TransferDetails" />
+        <AssociationConnector Association="Model.OITM_ArticlesDPI1_DownPaymentDetail1" />
+        <AssociationConnector Association="Model.OITM_ArticlesRIN1_ClientCreditNoteDetail" />
+        <EntityTypeShape EntityType="Model.Colors" Width="1.5" PointX="24" PointY="43" />
+        <EntityTypeShape EntityType="Model.Cover" Width="1.5" PointX="20.75" PointY="41.875" />
+        <AssociationConnector Association="Model.CoverColors" />
+        <EntityTypeShape EntityType="Model.Ribbon" Width="1.5" PointX="23.75" PointY="39.75" />
+        <AssociationConnector Association="Model.ColorsRibbon" />
+        <EntityTypeShape EntityType="Model.Filling" Width="1.5" PointX="26.875" PointY="40" />
+        <AssociationConnector Association="Model.ColorsFilling" />
+        <EntityTypeShape EntityType="Model.OCRD_BusinessPartner" Width="1.5" PointX="6.4271191183603928" PointY="31.436286419367551" />
+        <EntityTypeShape EntityType="Model.OWTQ_TransferRequest" Width="2.125" PointX="24.25" PointY="13.625" />
+        <AssociationConnector Association="Model.FK_OWHS_BranchOWTQ_TransferRequest" />
+        <AssociationConnector Association="Model.FK_OWTQ_OrdersWTQ1_OrderDetails" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="13.5" PointY="29.125" />
+        <AssociationConnector Association="Model.FK_OWTR_TransfersWTR1_TransferDetails" />
+        <EntityTypeShape EntityType="Model.UCakes" Width="1.5" PointX="11.033351813924197" PointY="17.580256038149937" />
+        <EntityTypeShape EntityType="Model.UCategory" Width="1.5" PointX="2.3925097055698323" PointY="26.699087080871262" />
+        <EntityTypeShape EntityType="Model.UColor_Covert" Width="1.5" PointX="0.2163312156760745" PointY="13.653828448454769" />
+        <EntityTypeShape EntityType="Model.UColor_Flower" Width="1.5" PointX="4.6658396332831309" PointY="1.1181061422070984" />
+        <EntityTypeShape EntityType="Model.UColor_Ribbon" Width="1.5" PointX="3.8264879080590273" PointY="18.545974084430362" />
+        <EntityTypeShape EntityType="Model.UColor_top" Width="1.5" PointX="10.51736457018059" PointY="17.802784108464973" />
+        <EntityTypeShape EntityType="Model.UCover" Width="1.5" PointX="10.031270277700978" PointY="16.624423139088051" />
+        <EntityTypeShape EntityType="Model.UEspecialty" Width="1.5" PointX="10.124692891782473" PointY="8.390265617701349" />
+        <EntityTypeShape EntityType="Model.UFlower" Width="1.5" PointX="5.897185102988586" PointY="31.601905658655756" />
+        <EntityTypeShape EntityType="Model.UMovements" Width="1.5" PointX="7.6038429213705676" PointY="3.8622784185513286" />
+        <EntityTypeShape EntityType="Model.UMovements_Acc" Width="1.5" PointX="9.6809140283991191" PointY="17.557020657489552" />
+        <EntityTypeShape EntityType="Model.UStyle" Width="1.5" PointX="11" PointY="1.375" />
+        <EntityTypeShape EntityType="Model.UStyle_filler" Width="1.5" PointX="6.804544740731151" PointY="26.773380575130407" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

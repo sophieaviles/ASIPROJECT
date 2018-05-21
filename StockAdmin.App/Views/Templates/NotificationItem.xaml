@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="SigiFluent.Views.Templates.NotificationItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converter="clr-namespace:SigiFluent.Converter"
+             mc:Ignorable="d" >
+    <WrapPanel >
+        
+          <Grid>
+              <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0"                  
+                   Foreground="White"
+                  Text="{Binding NotificationCount,IsAsync=True , FallbackValue=0}" Margin="5" />
+        <TextBlock  Grid.Column="1"
+                   Foreground="White"                  
+                   Text="{Binding NotificationName,IsAsync=True, FallbackValue=Notification }"
+                   Margin="5"/>
+            </Grid> 
+
+    </WrapPanel>
+</UserControl>

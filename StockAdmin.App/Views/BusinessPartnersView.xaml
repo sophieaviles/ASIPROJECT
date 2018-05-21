@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="SigiFluent.Views.BusinessPartnersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="800">
+    <Grid Margin ="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="Auto"/>
+            <RowDefinition Height ="*"/>
+            <RowDefinition Height ="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Socios de Negocio" Target="{Binding GrdBusinessPartners}" Grid.Row="0"/>
+        <telerik:RadGridView Name="GrdBusinessPartners" Grid.Row="1" ItemsSource ="{Binding BusinessPartners, IsAsync=True}"
+                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             AutoGenerateColumns="False" IsBusy="{Binding IsBusy}" MinHeight="300">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding CardCode}" Header="Código"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding CardName}" Header="Nombre"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding CardType}" Header="Tipo"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding AddId}" Header="NRC"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding U_NIT}" Header="NIT"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Address}" Header="Direccion"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Notes}" Header="Giro"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ValidFor}" Header="Estado"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <telerik:RadButton>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SigiFluent;component/Resources/light/appbar.close.png" Width="22" Height="22" Margin="2"  />
+                    <TextBlock Text="Cerrar" VerticalAlignment="Center" Margin="2" />
+                </StackPanel>
+            </telerik:RadButton>
+        </StackPanel>
+
+    </Grid>
+    
+</UserControl>

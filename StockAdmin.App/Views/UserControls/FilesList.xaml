@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="SigiFluent.Views.UserControls.FilesList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              
+             mc:Ignorable="d" >
+
+    <ListView ItemsSource="{Binding AttachmentsCollection}" SelectedItem="{Binding SelectedAttach}" 
+              BorderThickness="0" Padding="0"
+              ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+        <ListView.ItemsPanel>
+            <ItemsPanelTemplate>
+                <!-- Here is the panel that will contain the items -->
+                <StackPanel Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+        </ListView.ItemsPanel>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <!--<StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Path=FileName}"/>
+                </StackPanel>-->
+                <!--<Rectangle x:Name="cardThumb" Stretch="Fill" 
+                     Width="100" Height="100"  RadiusY="0" RadiusX="0" >
+                    <Rectangle.Fill>
+                        --><!--<ImageBrush ImageSource="{Binding Path=Himself, Converter={converters:ImageSrcByCardName}, ConverterParameter=thumb,IsAsync=True,FallbackValue=Loading...}" />--><!--
+                        <ImageBrush ImageSource="{Binding Path=FileName ,Converter={converter:ImgSourceConverter}}"></ImageBrush>
+                    </Rectangle.Fill>
+                </Rectangle>-->
+                <Image MaxWidth="400" MaxHeight="200">
+                     <Image.Source>
+                    <Binding Path="FileName" />
+                </Image.Source>
+                </Image>
+               
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView> 
+    
+</UserControl>

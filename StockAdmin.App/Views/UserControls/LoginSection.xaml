@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="SigiFluent.Views.UserControls.LoginSection"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converter="clr-namespace:SigiFluent.Converter"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             
+             >
+    <UserControl.Visibility>
+        <Binding Path="IsLoggedIn" Converter="{converter:BoolToCollapsedNeg}"/>
+    </UserControl.Visibility>
+    <StackPanel>
+        
+            <TextBlock Text="Iniciar Sesión" Style="{DynamicResource Title}" Margin="10" />
+
+        <Label Content="USUARIO" Target="{Binding tbName}" Foreground="White" Margin="10,0" />            
+            <TextBox Name="tbName" Margin="10 0 10 10" Text="{Binding UserName, Mode=TwoWay}"/>
+
+        <Label Content="CONTRASEÑA" Target="{Binding PassBox}" Foreground="White" Margin="10,0"/>
+        <PasswordBox x:Name="PassBox"  Margin="10 0 10 10"  >
+            <PasswordBox.InputBindings>
+                <KeyBinding Key="Enter" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=PassBox}">
+                </KeyBinding>
+            </PasswordBox.InputBindings>
+        </PasswordBox>
+
+       
+            <TextBlock Text="Ingrese un usuario y contraseña válido" Grid.Column="1" Margin="10,10,10,0" 
+                   Style="{StaticResource Error_msg}" TextDecorations="{x:Null}" >
+                <TextBlock.Visibility>
+                    <Binding Path="HasErrorLogin" Converter="{converter:BoolToCollapsed}"/>
+                </TextBlock.Visibility>
+            </TextBlock>
+       
+       
+        
+        <Button Content="Iniciar Sesión" Margin="10 10 10 0" HorizontalContentAlignment="Center" Height="36"
+                Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=PassBox}" Style="{StaticResource GrayButton}"  />
+          
+        
+    </StackPanel>
+</UserControl>

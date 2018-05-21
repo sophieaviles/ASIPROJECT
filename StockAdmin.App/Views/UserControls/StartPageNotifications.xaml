@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="SigiFluent.Views.UserControls.StartPageNotifications"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:templates="clr-namespace:SigiFluent.Views.Templates"
+             xmlns:converter="clr-namespace:SigiFluent.Converter"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="300" Background="#333333" >
+    <UserControl.Visibility>
+        <Binding Path="IsLoggedIn" Converter="{converter:BoolToCollapsed}"/>
+    </UserControl.Visibility>
+    <Grid >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="{Binding BranchCode}" Style="{DynamicResource Title}"/>
+            <TextBlock Text="OPERACIONES" Style="{DynamicResource SubTitle}" Foreground="White"/> 
+        </StackPanel>
+        
+
+        <ItemsControl Margin="10"  Grid.Row="1" ItemsSource="{Binding StartPageNotifications}" >
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Style="{DynamicResource GrayButton}">
+                        <templates:NotificationItem/>
+                        <Button.Visibility>
+                            <Binding Path="IsVisible" Converter="{converter:BoolToCollapsed}"/>
+                        </Button.Visibility>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+
+        </ItemsControl>
+
+        <Border Grid.Row="2"   Style="{StaticResource Separador}" >
+            
+            <StackPanel Margin="5">
+                <Grid >
+                    <Button   HorizontalAlignment="Left"   Height="80" Style="{StaticResource ActionBartButton}"
+                              Command="{Binding SynchronizeCommand}"
+                              ToolTip="Sincronizar">
+                        <Button.Visibility>
+                            <Binding Path="IsRunningSync" Converter="{converter:BoolToCollapsedNeg}" />
+                        </Button.Visibility>
+                        <Viewbox >
+                            <ContentControl Content="{StaticResource appbar_refresh}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button   HorizontalAlignment="Right"   Height="80" Style="{StaticResource ActionBartButton}"
+                              Command="{Binding RunAlohaSyncCommand}"
+                              ToolTip="Sincronizar Aloha">
+                        <Button.Visibility>
+                            <Binding Path="IsRunningSync" Converter="{converter:BoolToCollapsedNeg}" />
+                        </Button.Visibility>
+                        <Viewbox >
+                            <ContentControl Content="{StaticResource appbar_reset}"/>
+                        </Viewbox>
+                    </Button>
+                </Grid>
+                
+                <Label Content="Sincronizando..."  HorizontalAlignment="Center" Foreground="#FFB4ACAC"    >
+                    <Label.Visibility>
+                        <Binding Path="IsRunningSync" Converter="{converter:BoolToCollapsed}"/>
+                    </Label.Visibility>
+                    </Label>
+                <Label Content="{Binding BusyContent}"  HorizontalAlignment="Center" Foreground="#FFB4ACAC"  >
+                    <Label.Visibility>
+                        <Binding Path="IsRunningSync" Converter="{converter:BoolToCollapsed}"/>
+                    </Label.Visibility>
+                </Label>
+                <telerik:RadProgressBar  Grid.Row="2" Minimum="0" 
+					IsIndeterminate="{Binding IsRunningSync}" 
+					Value="{Binding ProgressValue ,Mode=TwoWay}"
+                    Height="7"  
+					Margin="1,15" />
+                
+                   
+            </StackPanel>
+        </Border>
+
+
+            <Border Grid.Row="3"   Style="{StaticResource Separador}">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Rectangle Width="32" Height="32" Grid.Column="0" ToolTip="{Binding LabelStatus}"
+                      RadiusY="0" RadiusX="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Rectangle.Fill>
+                        <ImageBrush   ImageSource="{Binding IconConnectionStatusPath}" />
+                    </Rectangle.Fill>
+
+                </Rectangle>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Foreground="White" Text="Estado de la connexión" Style="{StaticResource SubTitle}"  />
+                    <TextBlock Foreground="White" Text="{Binding LabelStatus}" Margin="2,0"  />
+                </StackPanel>
+
+            </Grid>
+        </Border>
+        
+        <Border Grid.Row="4"  Style="{StaticResource Separador}">
+            <templates:UserLoginSection Margin="10"/>
+        </Border>
+
+    </Grid>
+</UserControl>

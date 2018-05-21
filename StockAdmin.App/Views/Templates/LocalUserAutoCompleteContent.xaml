@@ -1,0 +1,14 @@
+﻿<UserControl x:Class="SigiFluent.Views.Templates.LocalUserAutoCompleteContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             >
+    <StackPanel Orientation="Horizontal">
+        <TextBlock Text="{Binding Name}" Style="{StaticResource AutoCompleteStyle}" />
+        <TextBlock Text=" " Style="{StaticResource AutoCompleteStyle}" />
+        <TextBlock Text="{Binding LastName}" Style="{StaticResource AutoCompleteStyle}" />
+         
+    </StackPanel>
+</UserControl>

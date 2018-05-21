@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="SigiFluent.Views.CanceledCheckBookGridView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:commands="clr-namespace:SigiFluent.Commands"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <telerik:RadGridView  IsSynchronizedWithCurrentItem="True"  ItemsSource="{Binding CanceledCheckBooksCollection, IsAsync=True}" 
+							AutoGenerateColumns="False" IsReadOnly="True"
+							SelectedItem ="{Binding CanceledCheckBook, Mode=TwoWay}" IsBusy="{Binding IsBusy}" >
+        <telerik:RadGridView.Columns>
+            <commands:MyColumn Header="#" Width="30" />
+            <telerik:GridViewDataColumn DataMemberBinding="{Binding Checkbook.SerieL}" Header="Talonario" />
+            <telerik:GridViewDataColumn DataMemberBinding="{Binding InitialNumL}" Header="Inicio" />
+            <telerik:GridViewDataColumn DataMemberBinding="{Binding LastNumL}" Header="Fin" />
+            <telerik:GridViewDataColumn DataMemberBinding="{Binding CategoryName}" Header="Categoria" />
+            <telerik:GridViewDataColumn DataMemberBinding="{Binding Processed}" Header="Procesado" />
+            <telerik:GridViewDataColumn DataMemberBinding="{Binding ModifiedByL}" Header="Modificó" />
+            <telerik:GridViewDataColumn DataMemberBinding="{Binding ModifiedDateL}" Header="Última modificación" DataFormatString="dd/MM/yyyy"/>
+            
+
+
+
+        </telerik:RadGridView.Columns>
+    </telerik:RadGridView>
+</UserControl>

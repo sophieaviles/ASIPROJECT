@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="SigiFluent.Views.DepositGridView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:commands="clr-namespace:SigiFluent.Commands"
+             mc:Ignorable="d" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+               Background="WhiteSmoke">
+    <Grid>
+        
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"  />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" >
+            <telerik:RadGridView  IsSynchronizedWithCurrentItem="True"  ItemsSource="{Binding DepositCollection, IsAsync=True}" 
+							GroupRenderMode="Flat" CanUserFreezeColumns="False" RowIndicatorVisibility="Visible"
+                            AutoGenerateColumns="False"
+                            CanUserDeleteRows="False" IsReadOnly="True"
+                            SelectedItem ="{Binding SelectedDeposit, Mode=TwoWay}" IsBusy="{Binding IsBusy}" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <commands:InvokeDataCommand Command="{Binding EditCurrentCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                    <telerik:RadGridView.InputBindings>
+                        <KeyBinding Key="Enter" Command="{Binding  Path=EditCurrentCommand}" />
+                        <KeyBinding Key="Delete"   Command="{Binding DeleteCurrentComand}"/>
+                    </telerik:RadGridView.InputBindings>
+                    <telerik:RadGridView.Columns>
+                    <commands:MyColumn Header="#" Width="30" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Date}" Header="Fecha" DataFormatString="dd/MM/yyyy"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Number}" Header="Numero" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding StateL}" Header="Estado"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Cash,StringFormat={}{0:C}}" Header="Efectivo" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Cheque, StringFormat={}{0:C}}" Header="Cheque" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding ModifiedDateL}" Header="Última modificación" DataFormatString="dd/MM/yyyy"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding CreatedByL}" Header="Usuario"/>
+
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </Grid>
+ 
+    </Grid>
+</UserControl>

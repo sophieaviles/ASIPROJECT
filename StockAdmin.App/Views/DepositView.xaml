@@ -1,0 +1,145 @@
+﻿<UserControl x:Class="SigiFluent.Views.DepositView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:commands="clr-namespace:SigiFluent.Commands"
+             xmlns:templates="clr-namespace:SigiFluent.Views.Templates"
+             mc:Ignorable="d" 
+              Background="White">
+    <Grid IsEnabled="{Binding IsEnabled}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0" Margin="0 0 5 0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="Fecha" Grid.Column="0" Grid.Row="0"  VerticalAlignment="Center"/>
+            <telerik:RadDateTimePicker 
+                    SelectedValue="{Binding  SelectedDeposit.Date, Mode=TwoWay }"
+                    DateTimeWatermarkContent="Seleccione fecha"  
+                    Margin="4"                  
+                    Grid.Column="1" Grid.Row="0" IsEnabled="False"/>
+
+            <Label Content="No.Deposito" Grid.Column="0" Grid.Row="1"  VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedDeposit.Number,Mode=TwoWay}" 
+                     commands:TextBoxMaskBehavior.Mask="Integer"  Margin="4" />
+
+            <Label Content="Efectivo" Grid.Column="0" Grid.Row="2"  VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Margin="4" Text="{Binding SelectedDeposit.Cash,Mode=TwoWay}"
+                     commands:TextBoxMaskBehavior.Mask="Decimal" />
+
+            <Label Content="Cheque" Grid.Column="0" Grid.Row="3"  VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding SelectedDeposit.Cheque,Mode=TwoWay}"  
+                     commands:TextBoxMaskBehavior.Mask="Decimal" 
+                     Margin="4" />
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1" Margin=" 5 0 0 0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+
+
+            <Label Content="Cajera" Grid.Column="0" Grid.Row="0"  VerticalAlignment="Center"/>
+            <!--<telerik:RadAutoCompleteBox  Grid.Column="1" Grid.Row="0" 
+                                             WatermarkContent="Ingrese Nombre Cajera..." 
+											 x:Name="CashierAutocomplete"
+											 TextSearchPath="Name"
+											 TextSearchMode="Contains"
+											 AutoCompleteMode="Suggest"
+											 SelectionMode="Single"
+											 ItemsSource="{Binding CashierCollection,IsAsync=True}" 
+                                             SelectedItem="{Binding SelectedDeposit.Cashier,Mode=TwoWay}"
+											 Margin="4"  BorderBrush="#FF25A0DA" BorderThickness="1" 
+                                             commands:FocusExtension.IsFocused="{Binding IsFocusedCashierSelector,Mode=TwoWay}"
+                                             >
+                <telerik:RadAutoCompleteBox.InputBindings>
+                    <KeyBinding Key="Escape"   Command="{Binding CloseModalViewCommand}"/>
+                </telerik:RadAutoCompleteBox.InputBindings>
+                <telerik:RadAutoCompleteBox.DropDownItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}" Style="{StaticResource AutoCompleteStyle}" />
+                            <TextBlock Text=" " Style="{StaticResource AutoCompleteStyle}" />
+                            <TextBlock Text="{Binding LastName}" Style="{StaticResource AutoCompleteStyle}" />
+
+                        </StackPanel>
+                    </DataTemplate>
+                </telerik:RadAutoCompleteBox.DropDownItemTemplate>
+            </telerik:RadAutoCompleteBox>-->
+
+            
+            <Label Content="Encargada" Grid.Column="0" Grid.Row="1"  VerticalAlignment="Center"/>
+            <TextBox  Grid.Column="3" Grid.Row="0"  Margin="5" MinWidth="120" Text="{Binding SelectedDeposit.CashierName}" />
+            <TextBox  Grid.Column="3" Grid.Row="1"  Margin="5" MinWidth="120"  Text="{Binding SelectedDeposit.ShopManagerName}" />
+            
+            <!--<telerik:RadComboBox Grid.Column="3" Grid.Row="0"  Margin="5"  MinWidth="120" EmptyText="Seleccione.." IsEditable="False"/>-->
+
+            
+            <!--<telerik:RadComboBox Grid.Column="3" Grid.Row="1"  Margin="5"  MinWidth="120" EmptyText="Seleccione.." IsEditable="False"/>-->
+            <!--<telerik:RadAutoCompleteBox  Grid.Column="1" Grid.Row="1" 
+                                             WatermarkContent="Ingrese Nombre Cajera..." 
+											 x:Name="ShopManagerAutocomplete"
+											 TextSearchPath="Name"
+											 TextSearchMode="Contains"
+											 AutoCompleteMode="Suggest"
+											 SelectionMode="Single"
+											 ItemsSource="{Binding CashierCollection,IsAsync=True}" 
+                                             SelectedItem="{Binding SelectedDeposit.ShopManager,Mode=TwoWay}"
+											 Margin="4"  BorderBrush="#FF25A0DA" BorderThickness="1" 
+                                             commands:FocusExtension.IsFocused="{Binding IsFocusedShopManagerAutoComplete,Mode=TwoWay}">
+                <telerik:RadAutoCompleteBox.InputBindings>
+                    <KeyBinding Key="Escape"   Command="{Binding CloseModalViewCommand}"/>
+                </telerik:RadAutoCompleteBox.InputBindings>
+                <telerik:RadAutoCompleteBox.DropDownItemTemplate>
+                    <DataTemplate>
+                        <templates:LocalUserAutoCompleteContent/>
+                    </DataTemplate>
+                </telerik:RadAutoCompleteBox.DropDownItemTemplate>
+            </telerik:RadAutoCompleteBox>-->
+
+        </Grid>
+
+
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource Footer}">
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" >
+                <telerik:RadButton Margin="2" Command="{Binding SaveDetailsCommand }" HorizontalContentAlignment="Left" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/SigiFluent;component/Resources/light/appbar.save.png" Width="22" Height="22" Margin="2"  />
+                        <TextBlock Text="Guardar Deposito" VerticalAlignment="Center" Margin="2" />
+                    </StackPanel>
+                </telerik:RadButton>
+                <telerik:RadButton  Margin="2"  Command="{Binding ProcessCommand}" HorizontalContentAlignment="Left">
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="/SigiFluent;component/Resources/light/appbar.lightning.png" Width="22" Height="22" Margin="2"  />
+                        <TextBlock Text="Procesar Deposito" VerticalAlignment="Center" Margin="2" />
+                    </StackPanel>
+                </telerik:RadButton>
+            </StackPanel>
+
+        </Border>
+
+
+    </Grid>
+</UserControl>

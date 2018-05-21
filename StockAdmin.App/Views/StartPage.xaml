@@ -1,0 +1,148 @@
+﻿<UserControl xmlns:UserControls="clr-namespace:SigiFluent.Views.UserControls" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:Templates="clr-namespace:SigiFluent.Views.Templates"
+             xmlns:converter="clr-namespace:SigiFluent.Converter"
+             x:Class="SigiFluent.Views.StartPage"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1200">
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            
+            <ColumnDefinition Width="*"  />
+        </Grid.ColumnDefinitions>
+  
+        <Grid Grid.Row="0" Background="#333333">
+        <UserControls:LoginSection />
+        <UserControls:StartPageNotifications />
+        </Grid>
+
+        
+
+       
+        <Grid Grid.Column="1" IsEnabled="{Binding IsLoggedIn}" HorizontalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <ScrollViewer Margin="0"  Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <WrapPanel FlowDirection="LeftToRight" >
+                    <Button Command="{Binding GotoSupplyRegionCommand}" Style="{DynamicResource ActionBartButton}" Margin="25" Width="200" Height="200" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Viewbox Grid.Row="0">
+                                <ContentControl Content="{StaticResource appbar_truck}"/>
+                            </Viewbox>
+                            <TextBlock Grid.Row="1" Text="Pedidos" HorizontalAlignment="Center" Style="{DynamicResource SubTitle}" />
+                        </Grid>
+                    </Button>
+
+                    <Button Command="{Binding GotoPurchaseRegionCommand}" Style="{DynamicResource ActionBartButton}" Margin="25" Width="200" Height="200">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Viewbox Grid.Row="0">
+                                <ContentControl Content="{StaticResource appbar_cart}"/>
+                            </Viewbox>
+                            <TextBlock Grid.Row="1" Text="Compras" HorizontalAlignment="Center" Style="{DynamicResource SubTitle}" />
+                        </Grid>
+                    </Button>
+
+                    <Button Command="{Binding GotoSellRegionCommand}" Style="{DynamicResource ActionBartButton}" Margin="25" Width="200" Height="200">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Viewbox Grid.Row="0">
+                                <ContentControl Content="{StaticResource appbar_money}"/>
+                            </Viewbox>
+                            <TextBlock Grid.Row="1" Text="Ventas" HorizontalAlignment="Center" Style="{DynamicResource SubTitle}" />
+                        </Grid>
+                    </Button>
+                    <Button Command="{Binding GotoInventoryRegionCommand}" Style="{DynamicResource ActionBartButton}" Margin="25" Width="200" Height="200">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Viewbox Grid.Row="0">
+                                <ContentControl Content="{StaticResource appbar_database}"/>
+                            </Viewbox>
+                            <TextBlock Grid.Row="1" Text="Inventario" HorizontalAlignment="Center" Style="{DynamicResource SubTitle}" />
+                        </Grid>
+                    </Button>
+
+                    <Button Command="{Binding GotoCheckBookRegionCommand}" Style="{DynamicResource ActionBartButton}" Margin="25" Width="200" Height="200">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Viewbox Grid.Row="0">
+                                <ContentControl Content="{StaticResource appbar_checkbook}"/>
+                            </Viewbox>
+                            <TextBlock Grid.Row="1" Text="Talonarios" HorizontalAlignment="Center" Style="{DynamicResource SubTitle}" />
+                        </Grid>
+                    </Button>
+
+                    <Button Command="{Binding GoToReportsCommand}" Style="{DynamicResource ActionBartButton}" Margin="25" Width="200" Height="200">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Viewbox Grid.Row="0">
+                                <ContentControl Content="{StaticResource appbar_stock_up}"/>
+                            </Viewbox>
+                            <TextBlock Grid.Row="1" Text="Reportes" HorizontalAlignment="Center" Style="{DynamicResource SubTitle}" />
+                        </Grid>
+                    </Button>
+
+                    <Button Command="{Binding PowerOffCommand}" Style="{DynamicResource ActionBartButton}" Margin="25" Width="200" Height="200">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Viewbox Grid.Row="0">
+                                <ContentControl Content="{StaticResource appbar_power}"/>
+                            </Viewbox>
+                            <TextBlock Grid.Row="1" Text="Fin De Día" HorizontalAlignment="Center" Style="{DynamicResource SubTitle}" />
+                        </Grid>
+                    </Button>
+
+
+                </WrapPanel>
+</ScrollViewer>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="4*" />
+                    <ColumnDefinition  Width="*"/>
+                </Grid.ColumnDefinitions>
+            
+                <telerik:RadMenu  Grid.Column="0" >
+
+                    <telerik:RadMenuItem Header="Administración" Icon="{DynamicResource appbar_settings}">
+                        <telerik:RadMenuItem Header="Administracion de Usuarios" Command="{Binding AccountAdminCommand}"/>
+                        <telerik:RadMenuItem Header="Plantilla de productos" Command="{Binding CmdLaunchProductStock}"/>
+                        <telerik:RadMenuItem Header="Artículos ALOHA" Command="{Binding CmdLaunchArticlesALOHA}"/>
+                    </telerik:RadMenuItem>
+
+                </telerik:RadMenu>
+                <TextBlock  Grid.Column="1" Background="#BEBEBE" Text="{Binding Version}" 
+                            TextWrapping="WrapWithOverflow"/>
+
+            </Grid>
+        </Grid> 
+    </Grid>
+</UserControl>

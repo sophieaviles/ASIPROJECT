@@ -1,0 +1,132 @@
+﻿<UserControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="SigiFluent.Views.NewTransferRequestView"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:commands="clr-namespace:SigiFluent.Commands"
+        Name="Pedido"
+        mc:Ignorable="d"     Background="White"
+        d:DesignHeight="600" d:DesignWidth="1000" >
+
+    <Grid Focusable="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin=" 0 0 5 0" IsEnabled="{Binding IsEnabled}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+
+                <StackPanel Grid.Row="0">
+
+                    <telerik:RadComboBox ToolTip="Almacen"  Margin="4" ItemsSource="{Binding TransferRequestSeries}" 
+                                             SelectedItem="{Binding SelectedSerie, UpdateSourceTrigger=PropertyChanged}"
+                                             EmptyText="Seleccione serie" IsEditable="False"
+                                             DisplayMemberPath="SeriesName" />
+                    <telerik:RadComboBox ToolTip="Almacen"  Margin="4" ItemsSource="{Binding BranchStores}"
+                                             SelectedItem="{Binding SelectedBranchStore, UpdateSourceTrigger=PropertyChanged}"
+                                             EmptyText="Seleccione almacén" IsEditable="False"
+                                             DisplayMemberPath="WhsTitle">
+
+                    </telerik:RadComboBox>
+                    <telerik:RadDateTimePicker DateTimeWatermarkContent="Seleccione fecha y hora"   
+                                                   Margin="4" 
+                                                   DisplayDateStart="{Binding DisplayDateStart}"
+                                                   IsReadOnly="{Binding IsEditModeDetail, Mode=TwoWay}"
+                                                   SelectedValue="{Binding TransferRequest.DocDueDate, Mode=TwoWay }" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="Resumen" Style="{StaticResource SubTitle}" Margin="4" />
+                    <telerik:RadGridView  Margin="4" RowIndicatorVisibility="Collapsed"
+                                      ItemsSource="{Binding TransferRequestDetailsResume, IsAsync=True}"
+                                      AutoGenerateColumns="False" IsBusy="{Binding IsDetailsResumeBusy}" 
+                                      CanUserFreezeColumns="False"
+                                      IsSynchronizedWithCurrentItem ="True"
+                                      BorderThickness="0" GridLinesVisibility="None" IsFilteringAllowed="False"
+                                      CanUserSortGroups="False" ShowGroupPanel="False" IsReadOnly="True" SelectionUnit="Mixed">
+
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn Header="Categoría"  DataMemberBinding="{Binding Category}"  />
+                            <telerik:GridViewDataColumn Header="Existencias"  DataMemberBinding="{Binding Stock}"  />
+                            <telerik:GridViewDataColumn Header="Cantidad" DataMemberBinding="{Binding Quantity}"/>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Margin="5 0 0 0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="1" Margin="2">
+                    <telerik:RadGridView  IsSynchronizedWithCurrentItem="True"  
+                                          ItemsSource="{Binding FilteredTransferRequestDetails, IsAsync=True}"
+                                          AutoGenerateColumns="False" IsBusy="{Binding IsDetailsBusy}" 
+                                          commands:ValidatorBehavior.IsValidationEnabled="True"
+                                          RowIndicatorVisibility="Visible"
+                                          GroupRenderMode="Flat" CanUserFreezeColumns="False"
+							              CanUserDeleteRows="False"
+                                          SelectedItem="{Binding SelectedDetail }">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="CellEditEnded">
+                                <commands:InvokeDataCommand Command="{Binding UpdateResumeCommand}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <telerik:RadGridView.Columns>
+                            <commands:MyColumn Header="#" Width="30" />
+                            <telerik:GridViewDataColumn Header="Código" DataMemberBinding="{Binding Itemcode}" IsReadOnly="True"  />
+                            <telerik:GridViewDataColumn Header="Artículo" DataMemberBinding="{Binding ItemName}"  IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="Unidad" DataMemberBinding="{Binding InvntryUom}"  IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="Existencias" DataMemberBinding="{Binding OnHand1}"  IsReadOnly="True"/>
+                            <telerik:GridViewDataColumn Header="Cantidad Solicitada" DataMemberBinding="{Binding IQuantity}" IsReadOnly="{Binding IsReadOnly}"/>
+                            <telerik:GridViewDataColumn Header="Categoría" DataMemberBinding="{Binding Line}"  IsReadOnly="True"/>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView >
+                </Border>
+
+                <StackPanel Grid.Row="2" Margin="2 6">
+                    <Label Content="Comentario:" Target="{Binding tbComentario}"></Label>
+                    <TextBox Name="tbComentario"  TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" 
+                         Height="60" Text="{Binding TransferRequest.Comments, Mode=TwoWay}" 
+                         VerticalContentAlignment="Top"/>
+                </StackPanel>
+
+
+            </Grid>
+        </Grid>
+
+        <Border Grid.Column="0" Grid.Row="1" Style="{StaticResource Footer}" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <telerik:RadButton Margin="4" HorizontalContentAlignment="Right" Command="{Binding CmdSaveTransferRequest}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/SigiFluent;component/Resources/light/appbar.save.png" Width="22" Height="22" Margin="2"  />
+                        <TextBlock Text="Guardar Pedido" VerticalAlignment="Center" Margin="2" />
+                    </StackPanel>
+                </telerik:RadButton>
+                <telerik:RadButton Margin="4" HorizontalContentAlignment="Right" Command="{Binding CmdProcessTransferRequest}">
+                    <StackPanel Orientation="Horizontal"  >
+                        <Image Source="/SigiFluent;component/Resources/light/appbar.lightning.png" Width="22" Height="22" Margin="2"  />
+                        <TextBlock Text="Procesar Pedido" VerticalAlignment="Center" Margin="2" />
+                    </StackPanel>
+                </telerik:RadButton>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+
+</UserControl>

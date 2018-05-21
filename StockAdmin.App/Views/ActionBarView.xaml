@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="SigiFluent.Views.ActionBarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib" 
+             xmlns:sigiApi="clr-namespace:StockAdminContext;assembly=SigiApi"
+             xmlns:converter="clr-namespace:SigiFluent.Converter"
+             mc:Ignorable="d" >
+
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="StatusEnumeration">
+            <CollectionViewSource.Source>
+                <ObjectDataProvider MethodName="GetNames" ObjectType="{x:Type system:Enum}">
+                    <ObjectDataProvider.MethodParameters>
+                        <x:Type TypeName="sigiApi:LocalStatus" />
+                    </ObjectDataProvider.MethodParameters>
+                </ObjectDataProvider>
+            </CollectionViewSource.Source>
+        </CollectionViewSource>
+    </UserControl.Resources>
+    <Grid>
+        <Border Grid.Row="0" Padding="1" x:Name="Toolbar" BorderBrush="{StaticResource MetroLightGray}" BorderThickness="1,0">
+               <ContentControl Name="Container" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+                    
+                </ContentControl>
+        </Border>
+    </Grid>
+</UserControl>

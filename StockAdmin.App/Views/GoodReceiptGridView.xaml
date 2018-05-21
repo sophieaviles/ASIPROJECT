@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="SigiFluent.Views.GoodReceiptGridView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:commands="clr-namespace:SigiFluent.Commands"
+             xmlns:SigiApi="clr-namespace:StockAdminContext;assembly=SigiApi"
+             mc:Ignorable="d" >
+    
+
+        <UserControl.Resources>
+            <CollectionViewSource x:Key="StatusEnumeration">
+                <CollectionViewSource.Source>
+                    <ObjectDataProvider MethodName="GetNames" ObjectType="{x:Type system:Enum}">
+                        <ObjectDataProvider.MethodParameters>
+                            <x:Type TypeName="SigiApi:LocalStatus" />
+                        </ObjectDataProvider.MethodParameters>
+                    </ObjectDataProvider>
+                </CollectionViewSource.Source>
+            </CollectionViewSource>
+        </UserControl.Resources>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"  />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" >
+            <telerik:RadGridView  IsSynchronizedWithCurrentItem="True"  ItemsSource="{Binding GoodsReceipts, IsAsync=True}" 
+							AutoGenerateColumns="False" IsReadOnly="True"
+							SelectedItem ="{Binding SelectedGoodsReceipt, Mode=TwoWay}" IsBusy="{Binding IsBusy}" >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <commands:InvokeDataCommand Command="{Binding EditCurrentCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <telerik:RadGridView.Columns>
+                    <commands:MyColumn Header="#" Width="30" />
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding DocNum}" Header="Comprobante" />                    
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Movement.Name}" Header="Movimiento" />                    
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding DocDate}" Header="Fecha" DataFormatString="dd/MM/yyyy"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding StateL}" Header="Estado"/>
+                    <telerik:GridViewDataColumn DataMemberBinding="{Binding Comments}" Header="Comentarios"/>
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+            </Grid>
+
+        </Grid>
+</UserControl>

@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="SigiFluent.Views.UserControls.DownPaymentChooser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:commands="clr-namespace:SigiFluent.Commands"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+         Background="White"
+            mc:Ignorable="d" >
+    <Border Padding="10" Focusable="False">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <TextBlock Text="Seleccione Anticipo" Style="{StaticResource SubTitle}"></TextBlock>
+                <!--<TextBox x:Name="SearchTextBox" Style="{DynamicResource SearchBox}" 
+                         commands:FocusExtension.IsFocused="{Binding IsFocusedSearchBox,Mode=TwoWay}"
+                         Text="{Binding SearchKeyword }" Width="400"  >
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="KeyUp">
+                            <commands:InvokeDataCommand Command="{Binding SearchCommand}" CommandParameter="{Binding ElementName=SearchTextBox}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <TextBox.InputBindings>
+                        <KeyBinding Key="Escape" Command="{Binding  Path=CloseModalViewCommand}" />
+                        <KeyBinding Key="Enter" Command="{Binding  Path=SearchCommand}" />
+                        <KeyBinding Key="Down" Command="{Binding Path=SetFocusToGrid}" />
+                    </TextBox.InputBindings>
+                </TextBox>
+                <Button Command="{Binding SearchCommand}" Content="Buscar" Style="{DynamicResource GrayButton}"/>-->
+            </StackPanel>
+
+            <Border Margin="0,10" Grid.Row="1" >
+                <telerik:RadGridView  IsSynchronizedWithCurrentItem="True"  ItemsSource="{Binding DownPaymentProcessedCollection, IsAsync=True}" 
+							GroupRenderMode="Flat" CanUserFreezeColumns="False" RowIndicatorVisibility="Visible"
+                            AutoGenerateColumns="False"
+                            CanUserDeleteRows="False" IsReadOnly="True"
+                            SelectedItem ="{Binding SelectedDownPayment, Mode=TwoWay}" IsBusy="{Binding IsBusy}" >
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <commands:InvokeDataCommand Command="{Binding SelectDownPaymentCommand}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                    <telerik:RadGridView.InputBindings>
+                        <KeyBinding Key="Enter" Command="{Binding  Path=SelectDownPaymentCommand}" />
+                        <KeyBinding Key="Escape"   Command="{Binding CloseModalViewCommand}"/>
+                    </telerik:RadGridView.InputBindings>
+                    <telerik:RadGridView.Columns>
+                        <commands:MyColumn Header="#" Width="30" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding NumAtCard}" Header="No. Factura" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding DocNum}" Header="No. Documento" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding SeriesTitle}" Header="Tipo" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding DocDueDate}" Header="Fecha" DataFormatString="dd/MM/yyyy"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding DocTotal ,StringFormat={}{0:C}}" Header="Monto" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding StateL}" Header="Estado"/>
+
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding ModifiedDateL}" Header="Última modificación" DataFormatString="dd/MM/yyyy"/>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding CreatedByL}" Header="Usuario"/>
+
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>
+

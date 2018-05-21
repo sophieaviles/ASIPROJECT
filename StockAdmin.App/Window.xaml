@@ -1,0 +1,82 @@
+﻿<Window xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:Views="clr-namespace:SigiFluent.Views"
+                    xmlns:converter="clr-namespace:SigiFluent.Converter"
+                   
+                    mc:Ignorable="d"    
+                    x:Class="SigiFluent.MainWindow"
+                     Title="SIGI"
+        WindowStartupLocation="CenterScreen"
+       
+        Width="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenWidthKey}}" 
+        Height="{DynamicResource {x:Static SystemParameters.MaximizedPrimaryScreenHeightKey}}" 
+         WindowStyle="None"
+        
+  AllowsTransparency="True" 
+        Loaded="MainWindow_OnLoaded"  Foreground="Black"  ResizeMode="CanResize">
+<!--
+     
+    -->
+    <Window.Resources/>
+
+    <Grid Name="MainGrid" Margin="0">
+
+
+        <!--Ribbons -->
+        <Border Grid.Row="0" >
+            <Border.Visibility>
+                <Binding Path="IsVisibleStartPage" Converter="{converter:BoolToCollapsedNeg}"/>
+            </Border.Visibility>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition  Height="*"/>
+                </Grid.RowDefinitions>
+                <Views:ToolBarView  Grid.Row="0"/>
+                <ContentControl Name="ActionBarContainer" Grid.Row="1" Margin="5 0" />
+                <Grid Name="MainContainer" Grid.Row="2" />
+            </Grid>
+        </Border>
+        <!--Pagina de Inicio -->
+        <telerik:RadBusyIndicator IsBusy="{Binding IsLoading}" BusyContent="{Binding BusyContent}" Grid.Row="0" >
+            <telerik:RadBusyIndicator.Visibility>
+                <Binding Path="IsVisibleStartPage" Converter="{converter:BoolToCollapsed}"/>
+            </telerik:RadBusyIndicator.Visibility>
+
+
+            <Views:StartPage />
+
+
+        </telerik:RadBusyIndicator>
+
+
+        <!--Botones de ventana -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,0">
+            <Button  HorizontalAlignment="Right" Command="{Binding CommandMinimice}" Style="{DynamicResource MinimizeButton }"/>
+            <Button  HorizontalAlignment="Right" Command="{Binding CloseApplicationCommand}" Style="{DynamicResource CloseAppButton }" BorderThickness="0 0 0 1"/>
+        </StackPanel>
+
+        <!--modales-->
+        <Border Name="modalMain" Background="#BF000000" Visibility="Collapsed"  >
+
+            <Grid Name="modalBorder" Margin="25" SnapsToDevicePixels="True" HorizontalAlignment="Stretch"   
+                            MaxWidth="{Binding SystemParameters.PrimaryScreenWidth}" >
+                <Grid Name="modalContainer"  Height="auto"  HorizontalAlignment="Stretch" 
+                          MaxWidth="{Binding SystemParameters.PrimaryScreenWidth}" />
+                <Button  Style="{DynamicResource CloseAppButton }"   Margin="0"
+                                 HorizontalAlignment="Right" BorderThickness="0"
+                                 Command="{Binding CloseMainModalCommand}" Background="Transparent" >
+
+                </Button>
+
+            </Grid>
+        </Border>
+
+
+    </Grid>
+
+</Window>

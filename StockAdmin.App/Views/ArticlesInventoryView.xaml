@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="SigiFluent.Views.ArticlesInventoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:commands="clr-namespace:SigiFluent.Commands"
+             mc:Ignorable="d" Background="White"
+             Name="Plantilla_de_productos"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Margin="2">
+        <Grid.RowDefinitions>
+           
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+       
+        <telerik:RadGridView Name="GrdCatalogo" ItemsSource="{Binding GenericBranchArticles, IsAsync=True}"
+                                          AutoGenerateColumns="False" IsBusy="{Binding IsBusy}" Grid.Row="0" 
+                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                              >
+            <telerik:RadGridView.Columns>
+                <commands:MyColumn Header="#" Width="30" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ItemCode}" Header="Código" IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding ItemName}" Header="Nombre" IsReadOnly="True"/>
+                <!--<telerik:GridViewDataColumn DataMemberBinding="{Binding TemplateL}" Header="Estado"/>-->
+
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding IsTemplate}" Header="Plantilla"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding OITB_Groups.ItmsGrpNam}" Header="Categoria"/>
+                
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+       
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 10 0 0">
+            <telerik:RadButton Command="{Binding CmdSaveStockTemplate}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SigiFluent;component/Resources/light/appbar.save.png" Width="22" Height="22" Margin="2"  />
+                    <TextBlock Text="Guardar Plantilla" VerticalAlignment="Center" Margin="2" />
+                </StackPanel>
+            </telerik:RadButton>
+            <!--<telerik:RadButton>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/SigiFluent;component/Resources/light/appbar.save.png" Width="22" Height="22" Margin="2"  />
+                    <TextBlock Text="Cancelar" VerticalAlignment="Center" Margin="2" />
+                </StackPanel>
+            </telerik:RadButton>-->
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="SigiFluent.Views.UsersGridView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:commands="clr-namespace:SigiFluent.Commands"
+             mc:Ignorable="d" 
+             Background="White">
+    <Grid Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Administracion de Usuarios"  Grid.Row="0"/>
+        <telerik:RadGridView Name="GrdAlohaArticles" Grid.Row="1" 
+                             SelectedItem="{Binding SelectedUser,Mode=TwoWay}"
+                             ItemsSource="{Binding UsersCollection, IsAsync=True}"
+                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             AutoGenerateColumns="False"  IsBusy="{Binding IsBusy}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <commands:InvokeDataCommand Command="{Binding EditCurrentCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <telerik:RadGridView.InputBindings>
+                <KeyBinding Key="Delete" Command="{Binding  Path=DeleteSelectedCommand}" />
+            </telerik:RadGridView.InputBindings>
+            <telerik:RadGridView.Columns>
+                <commands:MyColumn Header="#" Width="30" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Id}" Header="ID"  IsReadOnly="True" />
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding NickName}" Header="Nombre Usuario" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Nombre" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding LastName}" Header="Apellido" IsReadOnly="True"/>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Position}" Header="Cargo" IsReadOnly="True"/>
+
+                <!--<telerik:GridViewDataColumn DataMemberBinding="{Binding IsTemplate}" Header=""/>-->
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <WrapPanel Grid.Row="3" Margin="0 0 0 4">
+            <telerik:RadButton Margin="2" HorizontalContentAlignment="Left" Command="{Binding CreateNewUserCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <Viewbox>
+                        
+                    </Viewbox>
+                    <TextBlock Text="Crear Nuevo Usuario" VerticalAlignment="Center" Margin="2" />
+                </StackPanel>
+            </telerik:RadButton>
+            <!--<telerik:RadButton Margin="2" HorizontalContentAlignment="Left">
+                <StackPanel Orientation="Horizontal"  >
+                    <Image Source="/SigiFluent;component/Resources/light/appbar.close.png" Width="22" Height="22" Margin="2"  />
+                    <TextBlock Text="Cerrar" VerticalAlignment="Center" Margin="2" />
+                </StackPanel>
+            </telerik:RadButton>-->
+
+        </WrapPanel>
+
+    </Grid>
+</UserControl>

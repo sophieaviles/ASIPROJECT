@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEST", "TEST\TEST.csproj", "{9FE35855-0917-40CF-ACB7-EAF08DACD95E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Assemblies", "External Assemblies", "{4CD973CA-754B-41BE-A655-E59C1839EE6E}"
+	ProjectSection(SolutionItems) = preProject
+		packages\CrystalReports\CrystalDecisions.CrystalReports.Engine.dll = packages\CrystalReports\CrystalDecisions.CrystalReports.Engine.dll
+		packages\CrystalReports\CrystalDecisions.Enterprise.Viewing.ReportSource.dll = packages\CrystalReports\CrystalDecisions.Enterprise.Viewing.ReportSource.dll
+		packages\CrystalReports\CrystalDecisions.ReportSource.dll = packages\CrystalReports\CrystalDecisions.ReportSource.dll
+		packages\CrystalReports\CrystalDecisions.Shared.dll = packages\CrystalReports\CrystalDecisions.Shared.dll
+		packages\EntityFramework.6.0.1\lib\net40\EntityFramework.dll = packages\EntityFramework.6.0.1\lib\net40\EntityFramework.dll
+		packages\EntityFramework.6.0.1\lib\net40\EntityFramework.SqlServer.dll = packages\EntityFramework.6.0.1\lib\net40\EntityFramework.SqlServer.dll
+		packages\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.Common.dll = packages\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.Common.dll
+		packages\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.Logging.dll = packages\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+		packages\Enterprise Library\Microsoft.Practices.ServiceLocation.dll = packages\Enterprise Library\Microsoft.Practices.ServiceLocation.dll
+		packages\Enterprise Library\Microsoft.Practices.Unity.Configuration.dll = packages\Enterprise Library\Microsoft.Practices.Unity.Configuration.dll
+		packages\Enterprise Library\Microsoft.Practices.Unity.dll = packages\Enterprise Library\Microsoft.Practices.Unity.dll
+		packages\Enterprise Library\Microsoft.Practices.Unity.Interception.Configuration.dll = packages\Enterprise Library\Microsoft.Practices.Unity.Interception.Configuration.dll
+		packages\Enterprise Library\Microsoft.Practices.Unity.Interception.dll = packages\Enterprise Library\Microsoft.Practices.Unity.Interception.dll
+		packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll = packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll
+		packages\CrystalReports\SAPBusinessObjects.WPF.Viewer.dll = packages\CrystalReports\SAPBusinessObjects.WPF.Viewer.dll
+		packages\CrystalReports\SAPBusinessObjects.WPF.ViewerShared.dll = packages\CrystalReports\SAPBusinessObjects.WPF.ViewerShared.dll
+		packages\Microsoft.Bcl.1.1.3\lib\net40\System.IO.dll = packages\Microsoft.Bcl.1.1.3\lib\net40\System.IO.dll
+		packages\HttpClient\System.Net.Http.dll = packages\HttpClient\System.Net.Http.dll
+		packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.dll = packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.dll
+		packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.Extensions.dll = packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.Extensions.dll
+		packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.Primitives.dll = packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.Primitives.dll
+		packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.WebRequest.dll = packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.WebRequest.dll
+		packages\Microsoft.Bcl.1.1.3\lib\net40\System.Runtime.dll = packages\Microsoft.Bcl.1.1.3\lib\net40\System.Runtime.dll
+		packages\Microsoft.Bcl.1.1.3\lib\net40\System.Threading.Tasks.dll = packages\Microsoft.Bcl.1.1.3\lib\net40\System.Threading.Tasks.dll
+		packages\Fluent\System.Windows.Interactivity.dll = packages\Fluent\System.Windows.Interactivity.dll
+		packages\Telerik\Telerik.Windows.Controls.dll = packages\Telerik\Telerik.Windows.Controls.dll
+		packages\Telerik\Telerik.Windows.Controls.Docking.dll = packages\Telerik\Telerik.Windows.Controls.Docking.dll
+		packages\Telerik\Telerik.Windows.Controls.Expressions.dll = packages\Telerik\Telerik.Windows.Controls.Expressions.dll
+		packages\Telerik\Telerik.Windows.Controls.Input.dll = packages\Telerik\Telerik.Windows.Controls.Input.dll
+		packages\Telerik\Telerik.Windows.Controls.Navigation.dll = packages\Telerik\Telerik.Windows.Controls.Navigation.dll
+		packages\Telerik\Telerik.Windows.Controls.RibbonView.dll = packages\Telerik\Telerik.Windows.Controls.RibbonView.dll
+		packages\Telerik\Telerik.Windows.Data.dll = packages\Telerik\Telerik.Windows.Data.dll
+		packages\Telerik\Telerik.Windows.Documents.dll = packages\Telerik\Telerik.Windows.Documents.dll
+		packages\Telerik\Telerik.Windows.Themes.Expression_Dark.dll = packages\Telerik\Telerik.Windows.Themes.Expression_Dark.dll
+		packages\Telerik\Telerik.Windows.Themes.Office_Black.dll = packages\Telerik\Telerik.Windows.Themes.Office_Black.dll
+		packages\Telerik\Telerik.Windows.Themes.Office_Blue.dll = packages\Telerik\Telerik.Windows.Themes.Office_Blue.dll
+		packages\Telerik\Telerik.Windows.Themes.Office_Silver.dll = packages\Telerik\Telerik.Windows.Themes.Office_Silver.dll
+		packages\Telerik\Telerik.Windows.Themes.Summer.dll = packages\Telerik\Telerik.Windows.Themes.Summer.dll
+		packages\Telerik\Telerik.Windows.Themes.Transparent.dll = packages\Telerik\Telerik.Windows.Themes.Transparent.dll
+		packages\Telerik\Telerik.Windows.Themes.Vista.dll = packages\Telerik\Telerik.Windows.Themes.Vista.dll
+		packages\Telerik\Telerik.Windows.Themes.Windows7.dll = packages\Telerik\Telerik.Windows.Themes.Windows7.dll
+		packages\Telerik\Telerik.Windows.Themes.Windows8.dll = packages\Telerik\Telerik.Windows.Themes.Windows8.dll
+		packages\Telerik\Telerik.Windows.Themes.Windows8Touch.dll = packages\Telerik\Telerik.Windows.Themes.Windows8Touch.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2859AA39-A25D-444E-B178-60D82DF18B99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAdmin.App", "StockAdmin.App\StockAdmin.App.csproj", "{3FDAD918-2233-4F64-AADA-018D6475F4DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAdminContext", "StockAdminContext\StockAdminContext.csproj", "{854B68F0-CF2C-4ED4-A946-E3DB9C86086B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{2089C738-7708-4AE5-BEE9-B0953E7F422D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FE35855-0917-40CF-ACB7-EAF08DACD95E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FE35855-0917-40CF-ACB7-EAF08DACD95E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FE35855-0917-40CF-ACB7-EAF08DACD95E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9FE35855-0917-40CF-ACB7-EAF08DACD95E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FE35855-0917-40CF-ACB7-EAF08DACD95E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FE35855-0917-40CF-ACB7-EAF08DACD95E}.Release|x86.ActiveCfg = Release|Any CPU
+		{3FDAD918-2233-4F64-AADA-018D6475F4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDAD918-2233-4F64-AADA-018D6475F4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDAD918-2233-4F64-AADA-018D6475F4DC}.Debug|x86.ActiveCfg = Debug|x86
+		{3FDAD918-2233-4F64-AADA-018D6475F4DC}.Debug|x86.Build.0 = Debug|x86
+		{3FDAD918-2233-4F64-AADA-018D6475F4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDAD918-2233-4F64-AADA-018D6475F4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDAD918-2233-4F64-AADA-018D6475F4DC}.Release|x86.ActiveCfg = Release|x86
+		{3FDAD918-2233-4F64-AADA-018D6475F4DC}.Release|x86.Build.0 = Release|x86
+		{854B68F0-CF2C-4ED4-A946-E3DB9C86086B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{854B68F0-CF2C-4ED4-A946-E3DB9C86086B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{854B68F0-CF2C-4ED4-A946-E3DB9C86086B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{854B68F0-CF2C-4ED4-A946-E3DB9C86086B}.Debug|x86.Build.0 = Debug|Any CPU
+		{854B68F0-CF2C-4ED4-A946-E3DB9C86086B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{854B68F0-CF2C-4ED4-A946-E3DB9C86086B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{854B68F0-CF2C-4ED4-A946-E3DB9C86086B}.Release|x86.ActiveCfg = Release|Any CPU
+		{854B68F0-CF2C-4ED4-A946-E3DB9C86086B}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{854B68F0-CF2C-4ED4-A946-E3DB9C86086B} = {2089C738-7708-4AE5-BEE9-B0953E7F422D}
+	EndGlobalSection
+EndGlobal

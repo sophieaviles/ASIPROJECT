@@ -1,0 +1,4582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3FDAD918-2233-4F64-AADA-018D6475F4DC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StockAdmin.App</RootNamespace>
+    <AssemblyName>StockAdmin.App</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
+    <HockeyAppResourceId>c2327f0ae19f4b94976689f1ba5c5539</HockeyAppResourceId>
+    <PublishUrl>\\172.16.0.2\Sigi_Installer\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://172.16.0.2:81/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\Binaries\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Binaries\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Binaries\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Binaries\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <BaseAddress>4194304</BaseAddress>
+    <Prefer32Bit>False</Prefer32Bit>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C5CFAFC90A58FB8186D635A889A0DD77A1560FE6</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SigiFluent_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalReports\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalReports\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalReports\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Classic" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="sapbusinessobjects.wpf.viewer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalReports\SAPBusinessObjects.WPF.Viewer.dll</HintPath>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CrystalReports\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.2.18.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.18.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.6\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Windows.Controls, Version=2013.1.403.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Telerik\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2013.1.403.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Telerik\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2013.1.403.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Telerik\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2013.1.403.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView, Version=2013.1.403.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2013.1.403.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents, Version=2013.1.403.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telerik\Telerik.Windows.Documents.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Application.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\InventoryValidationBehavior.cs" />
+    <Compile Include="Commands\MyColumn.cs" />
+    <Compile Include="Converter\BoolInverted.cs" />
+    <Compile Include="Converter\ImgSourceConverter.cs" />
+    <Compile Include="Converter\NotificationItemIcon.cs" />
+    <Compile Include="Helpers\ConfigInitializer.cs" />
+    <Compile Include="Helpers\PDFGenerator.cs" />
+    <Compile Include="Helpers\PropertiesHelper.cs" />
+    <Compile Include="ViewModels\ClientCreditNoteViewModel.cs" />
+    <Compile Include="ViewModels\DownPaymentCreditNoteViewModel.cs" />
+    <Compile Include="ViewModels\GoodsIssuesViewModel.cs" />
+    <Compile Include="ViewModels\InventoryCountViewModel.cs" />
+    <Compile Include="ViewModels\MembershipViewModel.cs" />
+    <Compile Include="ViewModels\ReportsViewModel.cs" />
+    <Compile Include="ViewModels\UserControl\ArticlesChooserForGoodsIssuesVM.cs" />
+    <Compile Include="ViewModels\UserControl\ExportItem.cs" />
+    <Compile Include="ViewModels\UsersViewModel.cs" />
+    <Compile Include="Views\ActionBars\CashMissingBar.xaml.cs">
+      <DependentUpon>CashMissingBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\ClientCreditNotesBar.xaml.cs">
+      <DependentUpon>ClientCreditNotesBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\DepositBar.xaml.cs">
+      <DependentUpon>DepositBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\DownPaymentBar.xaml.cs">
+      <DependentUpon>DownPaymentBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\DownPaymentCreditNotesBar.xaml.cs">
+      <DependentUpon>DownPaymentCreditNotesBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\SpecialOrderBar.xaml.cs">
+      <DependentUpon>SpecialOrderBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\GoodIssuesBar.xaml.cs">
+      <DependentUpon>GoodIssuesBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\InventoryCountBar.xaml.cs">
+      <DependentUpon>InventoryCountBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\ReportsBar.xaml.cs">
+      <DependentUpon>ReportsBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\SellsBar.xaml.cs">
+      <DependentUpon>SellsBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\TransferBar.xaml.cs">
+      <DependentUpon>TransferBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClientCreditNotesView.xaml.cs">
+      <DependentUpon>ClientCreditNotesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DayToFinish.xaml.cs">
+      <DependentUpon>DayToFinish.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownPaymentCreditNoteView.xaml.cs">
+      <DependentUpon>DownPaymentCreditNoteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoodIssuesGridView.xaml.cs">
+      <DependentUpon>GoodIssuesGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoodIssuesView.xaml.cs">
+      <DependentUpon>GoodIssuesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryCountDetailView.xaml.cs">
+      <DependentUpon>InventoryCountDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryCountGridView.xaml.cs">
+      <DependentUpon>InventoryCountGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewClientCreditNote.xaml.cs">
+      <DependentUpon>NewClientCreditNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewTransferView.xaml.cs">
+      <DependentUpon>NewTransferView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportsContainerView.xaml.cs">
+      <DependentUpon>ReportsContainerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\DownPaymentChooser.xaml.cs">
+      <DependentUpon>DownPaymentChooser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\FilesList.xaml.cs">
+      <DependentUpon>FilesList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ProcessLoader.xaml.cs">
+      <DependentUpon>ProcessLoader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\SupplierPartnerChooser.xaml.cs">
+      <DependentUpon>SupplierPartnerChooser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\UsersWithRightsPicker.xaml.cs">
+      <DependentUpon>UsersWithRightsPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UsersGridView.xaml.cs">
+      <DependentUpon>UsersGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UsersView.xaml.cs">
+      <DependentUpon>UsersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowBehavior.cs" />
+    <Page Include="Properties\DesignTimeResources1.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Resources\GeneralStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ActionBars\CanceledCheckBookBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\CashMissingBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\CheckBookBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\ClientCreditNotesBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ActionBars\DepositBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\DownPaymentBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\DownPaymentCreditNotesBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\SpecialOrderBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ActionBars\GoodIssuesBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\GoodReceiptBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ActionBars\InventoryCountBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\PurchasesBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ActionBars\ReportsBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\SellsBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\TransferBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\SupplierCreditNoteBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBars\TransferRequestBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ActionBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AdminOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ArticlesAlohaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ArticlesInventoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CanceledCheckBookGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashMissingGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CashMissingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CheckbookGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClientCreditNotesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContextualErrorMessaje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DayToFinish.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DepositGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DepositView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DownPaymentCreditNoteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DownPaymentGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DownPaymentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GoodIssuesGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoodIssuesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoodsReceiptView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryCountDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryCountGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoodReceiptGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewCheckBookView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewClientCreditNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewCreditNotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewTransferView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PurchaseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReportsContainerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SaleDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SaleGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SpecialOrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewPurchaseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewRequestView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewTransferRequestView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SpecialOrdersGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ArticleChooserEditablePrice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubControls\SpecialOrder\SpecialOrderDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SubControls\SpecialOrder\SpecialOrderGridDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SupplierCreditNotesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Templates\LocalUserAutoCompleteContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Templates\NotificationItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Templates\UserLoginSection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ToolBarView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TransferRequestsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TransfersGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ArticleChooser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\BusinessPartnerChooser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ConfirmDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\DownPaymentChooser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\FilesList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\LoginSection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\ProcessLoader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\StartPageNotifications.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\SupplierPartnerChooser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserControls\UsersWithRightsPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UsersGridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UsersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WindowContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Application.xaml.cs">
+      <DependentUpon>Application.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Commands\BindToEvent.cs" />
+    <Compile Include="Commands\FocusExtension.cs" />
+    <Compile Include="Commands\TextBoxMaskBehavior.cs" />
+    <Compile Include="Commands\ValidationBehavior.cs" />
+    <Compile Include="Converter\EditViewButton.cs" />
+    <Compile Include="Converter\Visibility.cs" />
+    <Compile Include="Helpers\ApplicationPath.cs" />
+    <Compile Include="Helpers\NotificationsManager.cs" />
+    <Compile Include="Helpers\PrintHelper.cs" />
+    <Compile Include="Helpers\ViewModelManager.cs" />
+    <Compile Include="ViewModels\SupplierCreditNoteViewModel.cs" />
+    <Compile Include="ViewModels\UserControl\ArticleChooserByTotalViewModel.cs" />
+    <Compile Include="ViewModels\UserControl\ArticleChooserForGoodsReceiptVM.cs" />
+    <Compile Include="Model\NotificationItemMenu.cs" />
+    <Compile Include="Model\ToolMenuItem.cs" />
+    <Compile Include="ViewModels\ActionBarViewModel.cs" />
+    <Compile Include="ViewModels\ArticlesAlohaViewModel.cs" />
+    <Compile Include="ViewModels\CashMissingViewModel.cs" />
+    <Compile Include="ViewModels\CheckBookViewModel.cs" />
+    <Compile Include="ViewModels\CanceledCheckBookViewModel.cs" />
+    <Compile Include="ViewModels\DepositViewModel.cs" />
+    <Compile Include="ViewModels\GoodsReceiptViewModel.cs" />
+    <Compile Include="ViewModels\GroupViewModel.cs" />
+    <Compile Include="ViewModels\StockTempalteViewModel.cs" />
+    <Compile Include="ViewModels\UserControl\ArticleChooserViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DownPaymentViewModel.cs" />
+    <Compile Include="ViewModels\LoginVM.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PurchaseViewModel.cs" />
+    <Compile Include="ViewModels\SaleViewModel.cs" />
+    <Compile Include="ViewModels\SpecialOrderViewModel.cs" />
+    <Compile Include="ViewModels\ToolBarViewModel.cs" />
+    <Compile Include="ViewModels\TransfersViewModel.cs" />
+    <Compile Include="ViewModels\UserControl\BusinessPartnerChooserViewModel.cs" />
+    <Compile Include="ViewModels\UserControl\ConfirmDialogViewModel.cs" />
+    <Compile Include="Views\ActionBars\CanceledCheckBookBar.xaml.cs">
+      <DependentUpon>CanceledCheckBookBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\CheckBookBar.xaml.cs">
+      <DependentUpon>CheckBookBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\GoodReceiptBar.xaml.cs">
+      <DependentUpon>GoodReceiptBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\PurchasesBar.xaml.cs">
+      <DependentUpon>PurchasesBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\SupplierCreditNoteBar.xaml.cs">
+      <DependentUpon>SupplierCreditNoteBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ActionBars\TransferRequestBar.xaml.cs">
+      <DependentUpon>TransferRequestBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminOptions.xaml.cs">
+      <DependentUpon>AdminOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArticlesAlohaView.xaml.cs">
+      <DependentUpon>ArticlesAlohaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArticlesInventoryView.xaml.cs">
+      <DependentUpon>ArticlesInventoryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CanceledCheckBookGridView.xaml.cs">
+      <DependentUpon>CanceledCheckBookGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashMissingGridView.xaml.cs">
+      <DependentUpon>CashMissingGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashMissingView.xaml.cs">
+      <DependentUpon>CashMissingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckbookGridView.xaml.cs">
+      <DependentUpon>CheckbookGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContextualErrorMessaje.xaml.cs">
+      <DependentUpon>ContextualErrorMessaje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DepositGridView.xaml.cs">
+      <DependentUpon>DepositGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DepositView.xaml.cs">
+      <DependentUpon>DepositView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownPaymentGridView.xaml.cs">
+      <DependentUpon>DownPaymentGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DownPaymentView.xaml.cs">
+      <DependentUpon>DownPaymentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoodsReceiptView.xaml.cs">
+      <DependentUpon>GoodsReceiptView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoodReceiptGridView.xaml.cs">
+      <DependentUpon>GoodReceiptGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewCheckBookView.xaml.cs">
+      <DependentUpon>NewCheckBookView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewCreditNotes.xaml.cs">
+      <DependentUpon>NewCreditNotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseView.xaml.cs">
+      <DependentUpon>PurchaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaleDetailsView.xaml.cs">
+      <DependentUpon>SaleDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaleGridView.xaml.cs">
+      <DependentUpon>SaleGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpecialOrderView.xaml.cs">
+      <DependentUpon>SpecialOrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewPurchaseView.xaml.cs">
+      <DependentUpon>NewPurchaseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewRequestView.xaml.cs">
+      <DependentUpon>NewRequestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewTransferRequestView.xaml.cs">
+      <DependentUpon>NewTransferRequestView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpecialOrdersGridView.xaml.cs">
+      <DependentUpon>SpecialOrdersGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\ArticleChooserEditablePrice.xaml.cs">
+      <DependentUpon>ArticleChooserEditablePrice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubControls\SpecialOrder\SpecialOrderDetail.xaml.cs">
+      <DependentUpon>SpecialOrderDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubControls\SpecialOrder\SpecialOrderGridDetails.xaml.cs">
+      <DependentUpon>SpecialOrderGridDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SupplierCreditNotesView.xaml.cs">
+      <DependentUpon>SupplierCreditNotesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Templates\LocalUserAutoCompleteContent.xaml.cs">
+      <DependentUpon>LocalUserAutoCompleteContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Templates\NotificationItem.xaml.cs">
+      <DependentUpon>NotificationItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Templates\UserLoginSection.xaml.cs">
+      <DependentUpon>UserLoginSection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolBarView.xaml.cs">
+      <DependentUpon>ToolBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransferRequestsView.xaml.cs">
+      <DependentUpon>TransferRequestsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransfersGridView.xaml.cs">
+      <DependentUpon>TransfersGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ArticleChooser.xaml.cs">
+      <DependentUpon>ArticleChooser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\BusinessPartnerChooser.xaml.cs">
+      <DependentUpon>BusinessPartnerChooser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\ConfirmDialog.xaml.cs">
+      <DependentUpon>ConfirmDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\LoginSection.xaml.cs">
+      <DependentUpon>LoginSection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\StartPageNotifications.xaml.cs">
+      <DependentUpon>StartPageNotifications.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowContentView.xaml.cs">
+      <DependentUpon>WindowContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window.xaml.cs">
+      <DependentUpon>Window.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\TransferRequestViewModel.cs" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SigiFluent.ViewModels.ExportItem.datasource" />
+    <AppDesigner Include="Properties\" />
+    <None Include="SigiFluent_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.acorn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.acrobat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.aftereffects.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.audition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.bridge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.dreamweaver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.encore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.fireworks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.flash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.flashbuilder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.illustrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.indesign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.lightroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.photoshop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.prelude.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.premierpro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.adobe.speedgrade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.alien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.align.center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.align.justify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.align.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.align.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.anchor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.app.favorite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.app.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.app.plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.app.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.app.remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arcade.button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.collapsed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.corner.up.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.down.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.left.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.right.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.up.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.arrow.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.at.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.axis.three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.baby.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.base.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.base.select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.bath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.battery.0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.battery.1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.battery.2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.battery.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.bed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.beer.guinness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.bike.parking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.bike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.billboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.bing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.hardcover.open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.hardcover.open.writing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.open.information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.open.text.image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.open.text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.perspective.help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.perspective.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.book.side.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.border.all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.border.bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.border.horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.border.inner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.border.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.border.none.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.border.outside.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.border.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.border.top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.border.vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.box.layered.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.box.unfolded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.browser.chrome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.browser.ie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.browser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.browser.wire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.bug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.bug.remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cabinet.files.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cabinet.files.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cabinet.in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cabinet.out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cabinet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cabinet.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.calendar.14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.calendar.31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.calendar.day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.calendar.dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.calendar.month.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.calendar.range.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.calendar.week.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.calendar.year.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.auto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.flash.auto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.flash.auto.selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.flash.off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.flash.off.selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.flash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.flash.selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.switch.invert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.camera.switch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.candle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.candy.cane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.card.1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.card.2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.card.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.card.4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.card.5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.card.6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.card.7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.card.8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.card.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cards.club.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cards.diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cards.heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cards.spade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cd.eject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cell.align.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cell.column.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cell.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cell.function.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cell.insert.above.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cell.insert.below.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cell.merge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cell.row.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cell.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.centerline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.checkmark.cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.checkmark.pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.checkmark.pencil.top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.checkmark.thick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.checkmark.thick.unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.checkmark.uncrossed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chess.bishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chess.horse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chess.king.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chess.pawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chess.queen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chess.rook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chevron.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chevron.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chevron.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chevron.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.chromakey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.church.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.city.chicago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.city.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.city.sanfrancisco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.city.seattle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clear.inverse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clear.inverse.reflect.horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clear.reflect.horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clipboard.paper.check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clipboard.paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clipboard.paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clipboard.variant.edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clipboard.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clipboard.variant.text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.closedcaption.off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.closedcaption.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clothes.shirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.clothes.tie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cloud.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cloud.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cloud.download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cloud.pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cloud.play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cloud.upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cloudirc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.code.xml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cogs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.column.one.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.column.three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.column.two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.companioncube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cone.diagonal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.confirm.yes.no.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.1x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.3g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.4g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.bluetooth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.ev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.quality.extremelylow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.quality.high.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.quality.low.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.quality.medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.quality.veryhigh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.quality.verylow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.connection.wifi.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.console.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.contrast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.control.eject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.control.fastforward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.control.guide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.control.pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.control.play.live.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.control.play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.control.resume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.control.rewind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.control.stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.controller.snes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.controller.xbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.copyright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.corner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.coupon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.creativecommons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.creditcard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.crop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.crosshair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.crown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cup.empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cup.full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cup.half.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cup.paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cupcake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.currency.cent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.currency.dollar.free.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.currency.dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.currency.euro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.currency.grivna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.currency.pound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.currency.rubles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.currency.rupee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.currency.yen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cursor.default.outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cursor.default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cursor.default.transform.horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cursor.hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cursor.information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cursor.move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.cusor.pointer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.customerservice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.debug.restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.debug.step.into.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.debug.step.out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.debug.step.over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.debug.stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.deeplink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.deeplink.round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.devcenter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.diagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.arrow.box.height.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.arrow.box.width.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.arrow.line.height.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.arrow.line.height.short.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.arrow.line.height.thick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.arrow.line.width.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.arrow.line.width.short.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.arrow.line.width.thick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.box.height.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.box.width.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.line.height.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.line.height.short.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.line.width.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dimension.line.width.short.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.directions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.disk.download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.door.enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.door.leave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.door.lock.closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.door.lock.open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.drafting.centerline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.brush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.brush.reflection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.marker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.marker.reflection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.paintbrush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.pen.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.pen.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.pen.reflection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.pencil.reflection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.pixel.fill.grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.draw.pixel.grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.dropper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.elevator.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.elevator.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.email.gmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.email.hardedge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.email.minimal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.email.outlook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.email.yahoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.eye.hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.facebook.connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.facebook.disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.fan.box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.ferry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.film.live.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.film.select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.filter.alphabetical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.finder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.fingerprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.flag.bear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.flag.texas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.flag.wavy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.folder.ellipsis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.folder.lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.folder.open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.folder.people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.folder.puzzle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.folder.star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.food.apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.food.silverware.cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.food.silverware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.foot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.forklift.load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.forklift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.form.basic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.form.editable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.forrst.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.forsale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.fullscreen.box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.fullscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.futurama.bender.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.futurama.fry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.gas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.gauge.0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.gauge.100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.gauge.25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.gauge.50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.gauge.75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.gender.both.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.gender.female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.gender.male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.gift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.globe.wire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.google.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.googleplus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.a.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.a.plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.b.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.b.plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.c.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.c.plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.d.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.d.plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grade.f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.graph.bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.graph.boxplot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.graph.histogram.description.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.graph.histogram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.graph.line.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.graph.line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.graph.line.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.greek.sigma.lowercase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.greek.sigma.uppercase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.group.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.group.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.group.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.handicap.in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.handicap.out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.handicap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.hardware.cpu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.hardware.headphones.bluetooth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.hardware.headphones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.hardware.headset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.hardware.mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.heart.break.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.heart.cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.heart.outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.garage.arrow.close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.garage.arrow.open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.garage.open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.garage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.gps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.location.pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.location.round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.people.none.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.variant.enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.variant.leave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.home.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.hourglass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.icecream.bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.ie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.ants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.backlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.beach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.broken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.gallery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.hdr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.landscape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.macro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.night.landscape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.night.person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.night.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.night.portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.redeye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.snow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.sports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.image.sunset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.inbox.in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.inbox.out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.inbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.infinite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.information.circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.input.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.input.keyboard.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.input.keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.input.pen.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.input.pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.input.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.input.question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.interface.button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.interface.dropdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.interface.list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.interface.password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.interface.textbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.iphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.journal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.key.old.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lamp.desk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lamp.desk.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lamp.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.language.csharp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.language.java.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.language.java.text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.language.python.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.language.python.text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.laptop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lavalamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.arrange.bringforward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.arrange.bringtofront.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.arrange.sendbackward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.arrange.sendtoback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.arrange.solid.bringforward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.arrange.solid.bringtofront.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.arrange.solid.sendbackward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.arrange.solid.sendtoback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.perspective.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.thick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layer.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.collapse.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.collapse.left.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.collapse.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.collapse.right.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.expand.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.expand.left.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.expand.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.expand.right.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.layout.sidebar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.leaderboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lifesaver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lightbulb.coil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lightbulb.hue.on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lightbulb.hue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lightbulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lines.horizontal.4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.linkedin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.add.above.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.add.below.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.delete.inline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.hidden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.merge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.one.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.reorder.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.reorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.reorder.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.list.two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.location.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.location.circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.location.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.location.foursquare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.location.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.location.round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.logic.and.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.logic.and.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.logic.or.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.logic.or.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.loop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.magnify.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.magnify.arrow.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.magnify.arrow.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.magnify.back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.magnify.forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.magnify.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.man.sensor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.man.suitcase.fast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.man.suitcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.man.suitcase.run.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.man.walk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.map.aerial.highway.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.map.aerial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.map.folds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.map.gps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.map.location.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.map.location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.map.satellite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.map.treasure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.marketplace.old.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.marketplace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.markup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.martini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.marvel.avengers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.marvel.captainamerica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.marvel.ironman.mask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.marvel.ironman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.marvel.shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.marvel.shield.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.measure.celcius.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.measure.centimeter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.measure.farenheit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.measure.foot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.measure.inch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.measure.kilometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.measure.meter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.measure.mile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.medical.pill.broken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.medical.pill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.medical.pulse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.message.profanity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.message.send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.message.smiley.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.microphone.google.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.microphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.microsoft.tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.minecraft.civcraft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.monitor.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.monitor.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.monitor.film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.monitor.identify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.monitor.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.monitor.play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.monitor.to.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.mono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.moon.first.quarter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.moon.full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.moon.new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.moon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.moon.sleep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.moon.third.quarter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.moon.waning.crescent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.moon.waning.gibbous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.moon.waxing.crescent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.moon.waxing.gibbous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.movie.clapper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.movie.clapper.select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.movie.clapper.solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.movie.clapper.solid.select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.music.live.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.music.select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.music.wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.navigate.next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.navigate.previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.network.disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.network.port.disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.network.port.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.new.window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.newspaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.nfc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.noentry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.notification.above.multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.notification.above.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.notification.multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.notification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.notification.star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.nyan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.access.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.infopath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.lync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.onenote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.outlook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.powerpoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.publisher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.sharepoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.visio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.office.word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.opacity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.android.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.arm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.blackberry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.chromium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.gnome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.ios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.ubuntu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.windows.8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.windows.rt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.windowsphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.windowsphone.round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.os.x86.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.outlet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.bold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.break.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.corner.bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.corner.break.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.corner.cells.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.corner.folded.grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.corner.folded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.corner.folded.text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.corner.grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.corner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.corner.text.break.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.corner.text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.duplicate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.file.gif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.file.gif.tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.file.pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.file.pdf.tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.heartbreak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.hidden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.location.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.onenote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.powerpoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.solid.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.solid.cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.solid.move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.word.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.page.xml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.palmtree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.palmtree.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.paperclip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.paperclip.rotated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.paw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.paypal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.arrow.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.arrow.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.checkbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.multiple.magnify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.multiple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.sensor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.sensor.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.people.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.percent.off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.phone.hangup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.phone.voicemail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.pie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.pie.quarter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.pin.remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.places.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.plane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.plane.rotated.135.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.plane.rotated.45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.plant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.pokeball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.printer.blank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.printer.text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.progress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.projector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.projector.screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.protractor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.puzzle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.puzzle.round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.qr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.quill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.quote.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.quote.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.radar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.radar.screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.radioactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.redo.curve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.redo.point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.refresh.clockwise.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.refresh.clockwise.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.refresh.counterclockwise.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.refresh.counterclockwise.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.repeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.reply.calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.reply.email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.reply.people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.reset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.ribbon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.ribbon.wave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.rss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.ruler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sailboat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scale.unbalanced.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.e.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.g.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.i.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.r.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.u.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.v.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.y.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.scrabble.z.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sd.micro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.section.collapse.all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.section.collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.section.expand.all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.section.expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.share.open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.shield.alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.shopping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.shotglass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.shuffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sidebar.left.collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sidebar.left.expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sidebar.right.collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sidebar.right.expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sign.caution.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sign.interstate.75.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sign.interstate.94.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sign.interstate.95.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sign.interstate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sign.parking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sign.stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.simcard.micro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.simcard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.skydrive.download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.skydrive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.skydrive.upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sleep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.slice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.angry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.cry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.frown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.glasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.grin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.grumpy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.kiki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.squint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.tounge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.smiley.what.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.snowflake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.aim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.aim.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.amazon.appstore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.amazon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.apple.appstore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.apple.mobileme.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.appnet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.artcom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.arto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.aws.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.baidu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.basecamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.bebo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.behance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.blogger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.cloudapp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.coding4fun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.delicious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.deviantart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.digg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.digg.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.disqus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.dribbble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.dropbox.download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.dropbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.dropbox.upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.drupal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.engadget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.etsy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.evernote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.facebook.heart.break.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.facebook.heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.facebook.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.foursquare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.gdgt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.github.octocat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.github.octocat.solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.grooveshark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.indiegogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.jira.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.kickstarter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.lastfm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.linkedin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.linkedin.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.microsoft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.openid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.picasa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.pinterest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.playstation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.rdio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.reddit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.sharethis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.skype.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.slashdot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.soundcloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.spotify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.stackoverflow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.theverge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.tumblr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.twitter.hashtag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.twitter.retweet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.uservoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.vimeo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.wikipedia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.wordpress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.wordpress.variant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.yahoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.ycombinator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.yelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.social.zappos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sort.alphabetical.ascending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sort.alphabetical.descending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sort.alphabetical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sort.numeric.ascending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sort.numeric.descending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sort.numeric.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sound.0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sound.1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sound.2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sound.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sound.left.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sound.mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sound.stereo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sound.stereo.stack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.source.fork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.source.pull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.speakerphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.sport.football.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stairs.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stairs.down.reflect.horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stairs.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stairs.up.reflect.horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stamp.at.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stamp.empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stamp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.star.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.star.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.star.invincible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.star.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.star.remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.starwars.jedi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.starwars.rebel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.starwars.sith.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.steam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stock.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stock.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stocking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.store.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.stream.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.suitcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.switch.off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.symbol.braces.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.symbol.bracket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.table.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.table.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.table.select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.table.unselect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tablet.windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tag.label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tardis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.align.center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.align.justify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.align.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.align.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.bold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.italic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.overline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.sans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.script.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.serif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.size.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.size.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.size.plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.size.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.strikethrough.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.text.underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thermometer.celcius.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thermometer.digital.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thermometer.fahrenheit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thermometer.honeywell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thermometer.kelvin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thermometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thermometer.signs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thumb.up.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thumb.up.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thumb.up.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thumbs.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.thumbs.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.ticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tiles.four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tiles.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tiles.nine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tiles.plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tiles.sixteen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.rewind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.timer.stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tournament.bracket.down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tournament.bracket.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tournament.bracket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tournament.bracket.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tournament.bracket.up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.train.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.train.track.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.train.tunnel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transform.flip.horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transform.flip.vertical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transform.rotate.clockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transform.rotate.counterclockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transform.rotate.left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transform.rotate.right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.arrive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.car.accident.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.congestion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.connection.departure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.connection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.construction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.depart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.distance.from.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.distance.to.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.transit.hazard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tree.leaf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tree.leaf.three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tree.pine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tux.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tv.news.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tv.remote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.tv.syfy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.undo.curve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.undo.point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.unlock.keyhole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.usb.drive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.usb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.user.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.user.delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.user.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.user.tie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.group.removed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.line.curve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.line.spline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.pen.add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.pen.convert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.pen.minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.polygon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vector.star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.video.gallery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.video.highdefinition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.video.send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.video.standarddefinition.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vip.lowercase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.vip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.visualstudio.news.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.visualstudio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.warning.circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.water.droplet.alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.water.droplet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.water.droplet.reflection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.weather.chance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.weather.overcast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.weather.rain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.weather.snow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.weather.station.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.weather.sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.weather.sun.rise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.weather.sun.set.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.weather.symbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.weather.thunder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.webcam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.window.casement.closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.window.casement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.window.closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.window.maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.window.minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.window.restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.window.simple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.windowsphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.xbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.youtube.play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.zune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StockAdminContext\StockAdminContext.csproj">
+      <Project>{854b68f0-cf2c-4ed4-a946-e3db9c86086b}</Project>
+      <Name>StockAdminContext</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserControls\SpecialOrderDocument.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\attention-30.png" />
+    <Resource Include="Resources\Icons\check-30.png" />
+    <Resource Include="Resources\Icons\remove-30.png" />
+    <Resource Include="Resources\Icons\search-30.png" />
+    <Resource Include="Resources\Icons\settings-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\appbar.network.port.disconnect.png" />
+    <Resource Include="Resources\Icons\appbar.network.port.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\info-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\appbar.timer.forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.downpayment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.deposit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\cash.missing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="Images\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\light\appbar.specialtruck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
